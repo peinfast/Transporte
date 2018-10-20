@@ -16,7 +16,7 @@ if ($row = $sql)
 		{
 		session_start();
 		$_SESSION['usuario'] = $usuario;
-		header("Location: ../perfil.php");
+		header("Location: ../index.php");
 		}else
 			{
 			header("Location: ../index.html");
