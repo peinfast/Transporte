@@ -2,30 +2,30 @@
 class Transporte
 {
 	private $pdo;
-    
+
     public $Folio;
     public $Cliente;
     public $Marca;
     public $Destino;
     public $Servicio;
     public $Estatus;
-    public $FH Cedic;
+    public $FH_Cedic;
     public $Usuario1;
-    public $FH Arribo;
+    public $FH_Arribo;
     public $Usuario2;
-    public $FH Inicio CarDesc;
+    public $FH_Inicio_CarDesc;
     public $Usuario3;
-    public $FH Conclu CarDesc;
+    public $FH_Conclu_CarDesc;
     public $Usuario4;
-    public $FH Salida Caseta;  
+    public $FH_Salida_Caseta;
     public $Usuario5;
-    public $Observaciones;	
+    public $Observaciones;
 
 	public function __CONSTRUCT()
 	{
 		try
 		{
-			$this->pdo = Database::StartUp();     
+			$this->pdo = Database::StartUp();
 		}
 		catch(Exception $e)
 		{
@@ -52,15 +52,16 @@ class Transporte
 
 	public function Obtener($Folio)
 	{
-		try 
+
+		try
 		{
 			$stm = $this->pdo
 			          ->prepare("SELECT * FROM folios WHERE Folio = ?");
-			          
+
 
 			$stm->execute(array($Folio));
 			return $stm->fetch(PDO::FETCH_OBJ);
-		} catch (Exception $e) 
+		} catch (Exception $e)
 		{
 			die($e->getMessage());
 		}
@@ -68,13 +69,13 @@ class Transporte
 
 	public function Eliminar($Folio)
 	{
-		try 
+		try
 		{
 			$stm = $this->pdo
-			            ->prepare("DELETE FROM folios WHERE Folio = ?");			          
+			            ->prepare("DELETE FROM folios WHERE Folio = ?");
 
 			$stm->execute(array($Folio));
-		} catch (Exception $e) 
+		} catch (Exception $e)
 		{
 			die($e->getMessage());
 		}
@@ -82,23 +83,23 @@ class Transporte
 
 	public function Actualizar($data)
 	{
-		try 
+		try
 		{
-			$sql = "UPDATE folios SET 
-						FH Arribo         = ?, 
+			$sql = "UPDATE folios SET
+						FH Arribo         = ?,
 						Usuario2        = ?,
 				    WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-                        $data->FH Arribo, 
+                        $data->FH_Arribo,
                         $data->Usuario2
-                       
-                        
+
+
 					)
 				);
-		} catch (Exception $e) 
+		} catch (Exception $e)
 		{
 			die($e->getMessage());
 		}
@@ -106,35 +107,36 @@ class Transporte
 
 	public function Registrar(Transporte $data)
 	{
-		try 
+		include '../control/validar.php';
+		try
 		{
-		$sql = "INSERT INTO folios (Folio,Cliente,Marca,Destino,Servicio,Estatus,FH Cedic,Usuario1,FH Arribo,Usuario2,FH Inicio CarDesc,Usuario3,FH Conclu CarDesc,Usuario4,FH Salida Caseta,Usuario5,Observaciones) 
-		        VALUES (Usuario ?, ?, ?, ?, ?, ?, current_timestamp, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO folios (Folio,Cliente,Marca,Destino,Servicio,Estatus,FH Cedic=current_timestamp,Usuario1='$usuario',FH Arribo=null,Usuario2=null,FH Inicio CarDesc=null,Usuario3=null,FH Conclu CarDesc=null,Usuario4=null,FH Salida Caseta=null,Usuario5=null,Observaciones)
+		        VALUES ( ?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
                     $data->Folio,
-                    $data->Cliente, 
-                    $data->Marca, 
+                    $data->Cliente,
+                    $data->Marca,
                     $data->Destino,
                     $data->Servicio,
 		    $data->Estatus,
-		    $data->FH Cedic,
+		    $data->FH_Cedic,
 		    $data->Usuario1,
-		    $data->FH Arribo,
+		    $data->FH_Arribo,
 		    $data->Usuario2,
-	    	    $data->FH Inicio CarDesc,
+	    	    $data->FH_Inicio_CarDesc,
 		    $data->Usuario3,
-		    $data->FH Conclu CarDesc,
+		    $data->FH_Conclu_CarDesc,
 		    $data->Usuario4,
-	 	    $data->FH Salida Caseta,
+	 	    $data->FH_Salida_Caseta,
 		    $data->Usuario5,
 		    $data->Observaciones
-                    
+
                 )
 			);
-		} catch (Exception $e) 
+		} catch (Exception $e)
 		{
 			die($e->getMessage());
 		}

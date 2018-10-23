@@ -5,7 +5,7 @@ class TransporteController{
     
     private $model;
     
-    public function__CONSTRUCT(){
+    public function __CONSTRUCT(){
         $this->model = new Transporte();
     }
     
@@ -36,17 +36,17 @@ class TransporteController{
         $alm->Destino = $_REQUEST['Destino'];
         $alm->Servicio = $_REQUEST['Servicio'];
         $alm->Estatus = $_REQUEST['Estatus'];
-	$alm->FH Cedic = $_REQUEST['FH Cedic'];
-	$alm->Usuario1 = $_REQUEST['Usuario1'];
-	$alm->FH Arribo$_REQUEST['FH Arribo'];
-	$alm->Usuario2 = $_REQUEST['Usuario2'];
-	$alm->FH Inicio CarDesc$_REQUEST['FH Inicio CarDesc'];
-	$alm->Usuario3 = $_REQUEST['Usuario3'];
-	$alm->FH Conclu CarDesc$_REQUEST['FH Conclu CarDesc'];
-	$alm->Usuario4 = $_REQUEST['Usuario4'];
-	$alm->FH Salida Caseta$_REQUEST['FH Salida Caseta'];
-	$alm->Usuario5 = $_REQUEST['Usuario5'];
-	$alm->Observaciones = $_REQUEST['Observaciones'];
+	    $alm->FH_Cedic = $_REQUEST['FH Cedic'];
+	    $alm->Usuario1 = $_REQUEST['Usuario1'];
+	    $alm->FH_Arribo = $_REQUEST['FH Arribo'];
+	    $alm->Usuario2 = $_REQUEST['Usuario2'];
+	    $alm->FH_Inicio_CarDesc = $_REQUEST['FH Inicio CarDesc'];
+	    $alm->Usuario3 = $_REQUEST['Usuario3'];
+	    $alm->FH_Conclu_CarDesc = $_REQUEST['FH Conclu CarDesc'];
+	    $alm->Usuario4 = $_REQUEST['Usuario4'];
+	    $alm->FH_Salida_Caseta = $_REQUEST['FH Salida Caseta'];
+	    $alm->Usuario5 = $_REQUEST['Usuario5'];
+	    $alm->Observaciones = $_REQUEST['Observaciones'];
 
       
            

@@ -1,7 +1,7 @@
 ﻿<h1 class="page-header">Control de Arribos</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Transporte&a=Crud">Nuevo Transporte</a>
+    <a class="btn btn-primary" href="?c=Transporte&a=Crud">Nuevo Folio</a>
 </div>
 
 <table class="table table-striped">

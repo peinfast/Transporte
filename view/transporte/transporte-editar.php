@@ -1,14 +1,14 @@
 ﻿<h1 class="page-header">
-    <?php echo $alm->id != null ? $alm->Nombre : 'Nuevo Registro'; ?>
+    <?php echo $alm->Folio != null ? $alm->Nombre : 'Nuevo Registro'; ?>
 </h1>
 
 <ol class="breadcrumb">
-  <li><a href="?c=Transporte">Transportes</a></li>
-  <li class="active"><?php echo $alm->id != null ? $alm->Nombre : 'Nuevo Registro'; ?></li>
+  <li><a href="?c=Transporte">Folio</a></li>
+  <li class="active"><?php echo $alm->Folio != null ? $alm->Cliente : 'Nuevo Registro'; ?></li>
 </ol>
 
-<form id="frm-transporte" action="?c=Transporte&a=Guardar" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
+<form Clave="frm-transporte" action="?c=Transporte&&a=Guardar" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="Clave" value="<?php echo $alm->Clave; ?>" />
     
     <div class="form-group">
         <label>Folio</label>
@@ -35,13 +35,18 @@
         <select name="Servicio" class="form-control">
             <option <?php echo $alm->Servicio == 1 ? 'selected' : ''; ?> value="1">Carga</option>
             <option <?php echo $alm->Servicio == 2 ? 'selected' : ''; ?> value="2">Recibo</option>
-	    <option <?php echo $alm->Servicio == 3 ? 'selected' : ''; ?> value="3">Devolucion</option>
+	         <option <?php echo $alm->Servicio == 3 ? 'selected' : ''; ?> value="3">Devolucion</option>
         </select>
     </div>
     
     <div class="form-group">
         <label>Estatus</label>
         <input type="text" name="Estatus" value="<?php echo $alm->Estatus; ?>" class="form-control" placeholder="Estatus" data-validacion-tipo="requerido|min:10" />
+    </div>
+
+    <div class="form-group">
+        <label>Observaciones</label>
+        <input type="text" name="Observaciones" value="<?php echo $alm->Observaciones; ?>" class="form-control" placeholder="Observaciones" data-validacion-tipo="requerido|min:10" />
     </div>
     
     <hr />

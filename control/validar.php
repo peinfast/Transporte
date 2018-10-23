@@ -1,26 +1,21 @@
 <?php
-include('conexion.php');
-if (isset($_POST['login'])) {
-	//VARIABLES DEL USUARIO
 $usuario = $_POST['txtusuario'];
 $pass = $_POST['txtpass'];
-//VALIDAR CONTENIDO EN LAS VARIABLES O CAJAS DE TEXTO
-if (empty($usuario) | empty($pass)) 
-	{
-	header("Location: ../index.html");
-	exit();
-	}
-//VALIDANDO EXISTENCIA DEL USUARIO
-$sql = "SELECT * from usuarios where usuario = '$usuario' and pass = '$pass' ";
-if ($row = $sql) 
-		{
-		session_start();
-		$_SESSION['usuario'] = $usuario;
-		header("Location: ../index.php");
-		}else
-			{
-			header("Location: ../index.html");
-			exit();
-		}
+
+$conexion=mysqli_connect("localhost","root","","cargamentos");
+$sql="SELECT * FROM usuarios WHERE usuario='$usuario' AND pass='$pass'";
+$resultado=mysqli_query($conexion,$sql);
+
+$filas=mysqli_num_rows($resultado);
+
+if($filas>0)
+{
+	header("location:../index.php");
 }
+else
+{
+	echo "Error en la auntentificacion";
+}
+mysqli_free_result($resultado);
+mysql_close($conexion);
 ?>
