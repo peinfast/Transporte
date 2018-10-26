@@ -1,10 +1,7 @@
 <?php
-class Database
-{
-    public static function StartUp()
-    {
-        $pdo = new PDO('mysql:host=localhost;dbname=cargamentos;charset=utf8', 'root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
-        return $pdo;
-    }
-}
+$host="localhost";
+$user="root";
+$password="";
+$db="caargamentos";
+$pdo = new mysqli($host,$user,$password,$db);
+?>

@@ -14,7 +14,7 @@ if($filas>0)
 }
 else
 {
-	echo "Error en la auntentificacion";
+	header("location:../index.html");
 }
 mysqli_free_result($resultado);
 mysql_close($conexion);
