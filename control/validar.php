@@ -10,7 +10,14 @@ $filas=mysqli_num_rows($resultado);
 
 if($filas>0)
 {
-	header("location:../index.php");
+	session_start();
+
+	if(isset($_POST['txtusuario']))
+	{
+		$_SESSION['userses'] = $_POST['txtusuario'];
+		header("location:../index.php");
+	}
+	
 }
 else
 {

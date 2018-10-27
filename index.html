@@ -22,10 +22,12 @@
 
 
 <form action='control/validar.php' method="post">
-			
-<input type="hidden" placeholder="Usuario" name='txtusuario'>
 
-<input type="password" placeholder="Contraseña" name='txtpass'>
+<label>Usuario</label>
+<input type="user" name="txtusuario" class="form-control" placeholder="Ingrese Usuario"/>
+
+<label>Contraseña</label>
+<input type="password" name="txtpass" class="form-control" placeholder="Ingrese Contraseña" />
 
 <button type="submit" name="login">Login</button>
 

@@ -16,6 +16,11 @@
     </div>
 
     <div class="form-group">
+        <label>Area</label>
+        <input type="text" name="Area" value="<?php echo $alm->Area; ?>" class="form-control" placeholder="Ingrese el Area a asignar" />
+    </div>
+
+    <div class="form-group">
         <label>Cliente</label>
         <input type="text" name="Cliente" value="<?php echo $alm->Cliente; ?>" class="form-control" placeholder="Ingrese Cliente" />
     </div>

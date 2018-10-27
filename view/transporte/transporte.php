@@ -20,7 +20,13 @@
     </thead>
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
-        <tr>
+
+
+
+
+
+            <tr>
+
             <td><?php echo $r->Folio; ?></td>
             <td><?php echo $r->Cliente; ?></td>
             <td><?php echo $r->Marca; ?></td>
@@ -31,12 +37,15 @@
             <td><?php echo $r->Estatus; ?></td>
 
             <td>
-                <a class='btn btn-success' href="?c=Transporte&a=Crud&id=<?php echo $r->id; ?>">Actualizar</a>
+                <a class='btn btn-success' onclick="Actualizar" href="model/transporte.php">Actualizar</a>
             </td>
             <td>
                 <a class='btn btn-success' onclick="javascript:return confirm('Informacion del Folio');" href="?c=Transporte&a=Avanzada&id=<?php echo $r->id; ?>">Busqueda Avanzada</a>
             </td>
         </tr>
-    <?php endforeach; ?>
+
+    <?php endforeach;
+
+    ?>
     </tbody>
 </table>
