@@ -26,11 +26,22 @@ class TransporteController{
         require_once 'view/transporte/transporte-editar.php';
         require_once 'view/footer.php';
     }
+    public function Actua(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/header.php';
+        require_once 'view/transporte/caseta.php';
+        require_once 'view/footer.php';
+    }
 
     public function Guardar(){
         $alm = new Transporte();
 
-        //$alm->id = $_REQUEST['id']
+        //$alm->id = $_REQUEST['id'];
         $alm->Folio = $_REQUEST['Folio'];
         $alm->Area = $_REQUEST['Area'];
         $alm->Cliente = $_REQUEST['Cliente'];
@@ -40,9 +51,18 @@ class TransporteController{
         $alm->Servicio = $_REQUEST['Servicio'];
         $alm->FH_Carga = $_REQUEST['FH_Carga'];
         $alm->Estatus = $_REQUEST['Estatus'];
-        $alm->FH_Cedic = $_REQUEST['FH_Cedic'];
+        //$alm->FH_Cedic = $_REQUEST['FH_Cedic'];
         $alm->Usuario1 = $_REQUEST['Usuario1'];
-	      $alm->Observaciones = $_REQUEST['Observaciones'];
+        //$alm->FH_Carga = $_REQUEST['Cortina'];
+        //$alm->FH_Carga = $_REQUEST['FH_Arribo'];
+        //$alm->FH_Carga = $_REQUEST['Usuario2'];
+        //$alm->FH_Carga = $_REQUEST['FH_Inicio_CarDesc'];
+        //$alm->FH_Carga = $_REQUEST['Usuario3'];
+        //$alm->FH_Carga = $_REQUEST['FH_Conclu_CarDesc'];
+        //$alm->FH_Carga = $_REQUEST['Usuario4'];
+        //$alm->FH_Carga = $_REQUEST['FH_Salida_Caseta'];
+        //$alm->FH_Carga = $_REQUEST['Usuario5'];
+	    $alm->Observaciones = $_REQUEST['Observaciones'];
 
         $alm->id > 0
             ? $this->model->Actualizar($alm)
@@ -55,6 +75,10 @@ class TransporteController{
     public function Avanzada(){
         $this->model->Avanzada($_REQUEST['id']);
         header('Location: index.php');
+    }
+
+    public function update1(){
+
     }
 }
 ?>

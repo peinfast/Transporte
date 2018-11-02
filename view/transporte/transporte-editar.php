@@ -1,4 +1,5 @@
-﻿<h1 class="page-header">
+
+<h1 class="page-header">
     <?php echo $alm->id != null ? $alm->Folio : 'Nuevo Registro'; ?>
 </h1>
 
@@ -17,7 +18,7 @@
 
     <div class="form-group">
         <label>Area</label>
-        <input type="text" name="Area" value="<?php echo $alm->Area; ?>" class="form-control" placeholder="Ingrese el Area a asignar" />
+        <input type="text" name="Area" value="<?php echo $alm->Area; ?>" class="form-control" placeholder="Ingrese el area al que pertenece el cargamento" />
     </div>
 
     <div class="form-group">
@@ -43,9 +44,9 @@
     <div class="form-group">
         <label>Servicio</label>
         <select name="Servicio" class="form-control">
-            <option <?php echo $alm->Servicio == 1 ? 'selected' : ''; ?> value="1">Carga</option>
-            <option <?php echo $alm->Servicio == 2 ? 'selected' : ''; ?> value="2">Recibo</option>
-	         <option <?php echo $alm->Servicio == 3 ? 'selected' : ''; ?> value="3">Devolucion</option>
+            <option value="Carga">Carga</option>
+            <option value="Recibo">Recibo</option>
+            <option value="Devolucion">Devolucion</option>
         </select>
     </div>
 
@@ -53,6 +54,12 @@
         <label>Fecha/hora de carga</label>
         <input type="datetime" name="FH_Carga" value="<?php echo $alm->FH_Carga; ?>" class="form-control" placeholder="AAAA-MM-DD HH:MM:SS" />
     </div>
+
+    <input type="hidden" name="Estatus" value="Por arribar" class="form-control">
+
+    <input type="hidden" name="FH_Cedic" value="<<?php echo $fechaactua; ?>" class="form-control">
+
+    <input type="hidden" name="Usuario1" value="<?php echo $user; ?>" class="form-control">
 
     <div class="form-group">
         <label>Observaciones</label>

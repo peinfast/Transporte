@@ -2,6 +2,6 @@
 $host="localhost";
 $user="root";
 $password="";
-$db="caargamentos";
+$db="cargamentos";
 $pdo = new mysqli($host,$user,$password,$db);
 ?>
