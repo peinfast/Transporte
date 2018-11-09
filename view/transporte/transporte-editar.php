@@ -1,4 +1,3 @@
-
 <h1 class="page-header">
     <?php echo $alm->id != null ? $alm->Folio : 'Nuevo Registro'; ?>
 </h1>
@@ -18,7 +17,14 @@
 
     <div class="form-group">
         <label>Area</label>
-        <input type="text" name="Area" value="<?php echo $alm->Area; ?>" class="form-control" placeholder="Ingrese el area al que pertenece el cargamento" />
+        <select name="Servicio" class="form-control">
+            <option value="L1bre">L1bre</option>
+            <option value="Logistica Inversa">Logistica Inversa</option>
+            <option value="Movilidad">Movilidad</option>
+            <option value="Proyectos">Proyectos</option>
+            <option value="Recibo">Recibo</option>
+            <option value="Retail">Retail</option>
+        </select>
     </div>
 
     <div class="form-group">
@@ -46,7 +52,6 @@
         <select name="Servicio" class="form-control">
             <option value="Carga">Carga</option>
             <option value="Recibo">Recibo</option>
-            <option value="Devolucion">Devolucion</option>
         </select>
     </div>
 

@@ -1,13 +1,13 @@
 <h1 class="page-header">
-    <?php echo $alm->id != null ? $alm->Folio : 'Caseta Salida'; ?>
+    <?php echo $alm->id != null ? $alm->Folio : 'Carga/Descarga Concluida'; ?>
 </h1>
 
 <ol class="breadcrumb">
   <li><a href="?c=Transporte">Folio</a></li>
-  <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Actualizacion Salida'; ?></li>
+  <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Actualizacion Carga/Descarga Concluida'; ?></li>
 </ol>
 
-<form id="frm-transporte" action="?c=Transporte&a=GActuaout" method="post" enctype="multipart/form-data">
+<form id="frm-transporte" action="?c=Transporte&a=GCargaout" method="post" enctype="multipart/form-data">
 
   <div class="form-group">
       <label>Folio</label>
@@ -16,17 +16,17 @@
 
   <div class="form-group">
       <label>Estatus</label>
-      <select name="Estatus5" class="form-control">
-          <option value="Liberado de Cedic">Liberado de Cedic</option>
+      <select name="Estatus4" class="form-control">
+          <option value="Carga/Descarga Concluida">Carga/Descarga Concluida</option>
           <option value="Incidencia">Incidencia</option>
       </select>
   </div>
 
-    <input type="hidden" name="Usuario5" value="<?php echo $user; ?>" class="form-control">
+    <input type="hidden" name="Usuario4" value="<?php echo $user; ?>" class="form-control">
 
     <div class="form-group">
         <label>Observaciones</label>
-        <input type="text" name="Observaciones5" value="<?php echo $alm->Observaciones5; ?>" class="form-control" placeholder="Observaciones" />
+        <input type="text" name="Observaciones4" value="<?php echo $alm->Observaciones3; ?>" class="form-control" placeholder="Observaciones" />
     </div>
 
     <hr />

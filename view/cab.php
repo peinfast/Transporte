@@ -54,6 +54,6 @@
 		    $usuases=$_SESSION['txtusuario'];
 		    $user=htmlspecialchars($usuases);
 		  }
-			include 'menu.php';
+			include 'menu.html';
 		 ?>
     <div class="container">

@@ -1,10 +1,10 @@
-<h1 class="page-header">Control de Arribos</h1>
+<h1 class="page-header">Movilidad</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="index.html">Cerrar Sesion</a>
+    <a class="btn btn-primary" href="?c=Transporte&a=Crud">Nuevo Folio</a>
 </div>
 
-<table id="mytable" class="table table-striped">
+<table class="table table-striped">
     <thead>
         <tr>
             <th style="width:180px;">Folio</th>
@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach($this->model->Listar() as $r): ?>
+    <?php foreach($this->model->Movilidad() as $r): ?>
         <tr>
             <td><?php echo $r->Folio; ?></td>
             <td><?php echo $r->Area; ?></td>

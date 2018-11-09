@@ -10,20 +10,28 @@ require('conexion.php');
 			$resultado=mysqli_query($pdo, $sql) or die (mysqli_error($pdo));;
 
 			$filas=mysqli_num_rows($resultado);
+			$row=mysqli_fetch_array($resultado);
+			$tipo=$row['access'];
 
-
-			if($filas==1)
+			if($filas==1 && $tipo==1)
 			{
 					$_SESSION['txtusuario']=$usuario;
+
+					header("Location: ../index.php");
+			}
+			if ($filas==1 && $tipo==2) {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../inicio.php");
 			}
 			else
 			{
-					$fmsg = "Invalid Login Credentials.";
+				?>
+				 <script languaje="javascript">
+					alert("El Nombre y/o Clave de Usuario es Incorrecto!");
+					location.href = "../index.html";
+				 </script>
+				<?php
 			}
 		}
-		if(isset($_SESSION['txtusuario']))
-		{
-				$usuario=$_SESSION['txtusuario'];
-				header("Location: ../index.php");
-		}
+
 ?>

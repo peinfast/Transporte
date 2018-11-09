@@ -1,30 +1,38 @@
 <?php
 class Transporte
 {
-	private $pdo;
+		private $pdo;
 
-	public $id;
-	public $Folio;
-	public $Area;
+		public $id;
+		public $Folio;
+		public $Area;
     public $Cliente;
     public $Marca;
-	public $Cantidad;
+		public $Cantidad;
     public $Destino;
     public $Servicio;
-	public $FH_Carga;
+		public $FH_Carga;
     public $Estatus;
     public $FH_Cedic;
     public $Usuario1;
+		public $Observaciones;
     public $Cortina;
     public $FH_Arribo;
     public $Usuario2;
+		public $Estatus2;
+		public $Observaciones2;
     public $FH_Inicio_CarDesc;
     public $Usuario3;
+		public $Estatus3;
+		public $Observaciones3;
     public $FH_Conclu_CarDesc;
     public $Usuario4;
+		public $Estatus4;
+		public $Observaciones4;
     public $FH_Salida_Caseta;
     public $Usuario5;
-    public $Observaciones;
+		public $Estatus5;
+		public $Observaciones5;
 
 	public function __CONSTRUCT()
 	{
@@ -44,7 +52,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios");
+			$stm = $this->pdo->prepare("SELECT * FROM folios order by FH_Carga");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -54,7 +62,102 @@ class Transporte
 			die($e->getMessage());
 		}
 	}
+	public function L1bre()
+	{
+		try
+		{
+			$result = array();
 
+			$stm = $this->pdo->prepare('SELECT * FROM folios WHERE Area = "L1bre"');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Logistica()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare('SELECT * FROM folios WHERE Area = "Logistica Inversa"');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Movilidad()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare('SELECT * FROM folios WHERE Area = "Movilidad"');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Proyectos()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare('SELECT * FROM folios WHERE Area = "Proyectos"');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Recibo()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare('SELECT * FROM folios WHERE Area = "Recibo"');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Retail()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare('SELECT * FROM folios WHERE Area = "Retail"');
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 	public function Obtener($id)
 	{
 
@@ -94,36 +197,21 @@ class Transporte
 
 		try
 		{
-			$sql = "UPDATE folios  SET FH_Arribo = current_timestamp,
-						Usuario2 = ?,
-						Estatus = 'En patio',
-						Observaciones = ?,
-				    WHERE id = ?";
+
+			//$date = date('Y-m-d H:i:s');
+			$sql = "UPDATE folios  SET Estatus2 = ?, Cortina = ?, FH_Arribo = now(), Usuario2 = ?, Observaciones2 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
-							$data->Folio,
-							$data->Cliente,
-							$data->Marca,
-							$data->Cantidad,
-							$data->Destino,
-							$data->Servicio,
-							$data->FH_Carga,
-							$data->Estatus,
-							$data->FH_Cedic,
-							$data->Usuario1,
-							$data->FH_Arribo,
+							$data->Estatus2,
+							$data->Cortina,
+							//$data->FH_Arribo,
 							$data->Usuario2,
-							$data->FH_Inicio_CarDesc,
-							$data->Usuario3,
-							$data->FH_Conclu_CarDesc,
-							$data->Usuario4,
-							$data->FH_Salida_Caseta,
-							$data->Usuario5,
-							$data->Observaciones,
-							$data->id
+							$data->Observaciones2,
+							$data->Folio
+
 
 					)
 				);
@@ -135,38 +223,21 @@ class Transporte
 //Proceso...
 	public function Actualizar2($data)
 	{
-		include 'control/validar.php';
+
 		try
 		{
-			$sql = "UPDATE folios SET
-						FH_Inicio_CarDesc = current_timestamp,
-						Usuario3 = '".$usuario."',
-						Estatus = 'En proceso de carga/descarga',
-				    WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus3 = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
-							$data->Cliente,
-							$data->Marca,
-							$data->Cantidad,
-							$data->Destino,
-							$data->Servicio,
-							$data->FH_Carga,
-							$data->Estatus,
-							$data->FH_Cedic,
-							$data->Usuario1,
-							$data->FH_Arribo,
-							$data->Usuario2,
-							$data->FH_Inicio_CarDesc,
+							$data->Estatus3,
+							//$data->FH_Arribo,
 							$data->Usuario3,
-							$data->FH_Conclu_CarDesc,
-							$data->Usuario4,
-							$data->FH_Salida_Caseta,
-							$data->Usuario5,
-							$data->Observaciones,
+							$data->Observaciones3,
 							$data->Folio
+
 
 					)
 				);
@@ -178,38 +249,20 @@ class Transporte
 
 	public function Actualizar3($data)
 	{
-		include 'control/validar.php';
 		try
 		{
-			$sql = "UPDATE folios SET
-						FH_Conclu_CarDesc = current_timestamp,
-						Usuario4 = '".$usuario."',
-						Estatus = 'En patio',
-				    WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus4 = ?, FH_Conclu_CarDesc = now(), Usuario4 = ?, Observaciones4 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
-							$data->Cliente,
-							$data->Marca,
-							$data->Cantidad,
-							$data->Destino,
-							$data->Servicio,
-							$data->FH_Carga,
-							$data->Estatus,
-							$data->FH_Cedic,
-							$data->Usuario1,
-							$data->FH_Arribo,
-							$data->Usuario2,
-							$data->FH_Inicio_CarDesc,
-							$data->Usuario3,
-							$data->FH_Conclu_CarDesc,
+							$data->Estatus44,
+							//$data->FH_Arribo,
 							$data->Usuario4,
-							$data->FH_Salida_Caseta,
-							$data->Usuario5,
-							$data->Observaciones,
+							$data->Observaciones4,
 							$data->Folio
+
 
 					)
 				);
@@ -221,39 +274,18 @@ class Transporte
 
 	public function Actualizar4($data)
 	{
-		include 'control/validar.php';
 		try
 		{
-			$sql = "UPDATE folios SET
-						FH_Salida_Caseta = current_timestamp,
-						Usuario5 = '".$usuario."',
-						Estatus = 'En patio',
-				    WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus5 = ?, FH_Salida_Caseta = now(), Usuario5 = ?, Observaciones5 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-
-							$data->Cliente,
-							$data->Marca,
-							$data->Cantidad,
-							$data->Destino,
-							$data->Servicio,
-							$data->FH_Carga,
-							$data->Estatus,
-							$data->FH_Cedic,
-							$data->Usuario1,
-							$data->FH_Arribo,
-							$data->Usuario2,
-							$data->FH_Inicio_CarDesc,
-							$data->Usuario3,
-							$data->FH_Conclu_CarDesc,
-							$data->Usuario4,
-							$data->FH_Salida_Caseta,
+							$data->Estatus5,
+							//$data->FH_Arribo,
 							$data->Usuario5,
-							$data->Observaciones,
+							$data->Observaciones5,
 							$data->Folio
-
 					)
 				);
 		} catch (Exception $e)
