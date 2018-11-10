@@ -60,6 +60,17 @@ class TransporteController{
         require_once 'view/transporte/transporte-editar.php';
         require_once 'view/footer.php';
     }
+    public function Clab(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/cab.php';
+        require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
     public function Actua(){
         $alm = new Transporte();
 

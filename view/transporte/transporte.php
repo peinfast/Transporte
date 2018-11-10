@@ -4,7 +4,7 @@
     <a class="btn btn-primary" href="index.html">Cerrar Sesion</a>
 </div>
 
-<table id="mytable" class="table table-striped">
+<table id="myTable" class="table table-striped">
     <thead>
         <tr>
             <th style="width:180px;">Folio</th>
@@ -19,9 +19,11 @@
 
         </tr>
     </thead>
+
+
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
-        <tr>
+        <tr cr>
             <td><?php echo $r->Folio; ?></td>
             <td><?php echo $r->Area; ?></td>
             <td><?php echo $r->Cliente; ?></td>

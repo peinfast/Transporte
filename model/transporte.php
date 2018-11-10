@@ -52,7 +52,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios order by FH_Carga");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

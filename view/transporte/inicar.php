@@ -17,12 +17,29 @@
   <div class="form-group">
       <label>Estatus</label>
       <select name="Estatus3" class="form-control">
-          <option value="En ">En Cortina</option>
           <option value="En proceso de Carga y Descarga">En proceso de Carga y Descarga</option>
           <option value="Incidencia">Incidencia</option>
       </select>
   </div>
-
+  <div class="form-group">
+      <label>Cortina</label>
+      <select name="Cortina" class="form-control">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+      </select>
+  </div>
     <input type="hidden" name="Usuario3" value="<?php echo $user; ?>" class="form-control">
 
     <div class="form-group">
