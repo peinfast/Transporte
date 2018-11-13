@@ -51,8 +51,56 @@ class Transporte
 		try
 		{
 			$result = array();
+			//SELECT * FROM courses WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > start_time
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga > now() order by FH_Carga ");
+			$stm->execute();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function rojo()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function verde()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function amarillo()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -199,14 +247,14 @@ class Transporte
 		{
 
 			//$date = date('Y-m-d H:i:s');
-			$sql = "UPDATE folios  SET Estatus2 = ?, Cortina = ?, FH_Arribo = now(), Usuario2 = ?, Observaciones2 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus2 = ?, FH_Arribo = now(), Usuario2 = ?, Observaciones2 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Estatus2,
-							$data->Cortina,
+
 							//$data->FH_Arribo,
 							$data->Usuario2,
 							$data->Observaciones2,
@@ -226,14 +274,14 @@ class Transporte
 
 		try
 		{
-			$sql = "UPDATE folios  SET Estatus3 = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus3 = ?, Cortina = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Estatus3,
-							//$data->FH_Arribo,
+							$data->Cortina,
 							$data->Usuario3,
 							$data->Observaciones3,
 							$data->Folio
@@ -257,7 +305,7 @@ class Transporte
 			     ->execute(
 				    array(
 
-							$data->Estatus44,
+							$data->Estatus4,
 							//$data->FH_Arribo,
 							$data->Usuario4,
 							$data->Observaciones4,
@@ -300,7 +348,7 @@ class Transporte
 
 		try
 		{
-		$sql = "INSERT INTO folios (Folio, Area, Cliente, Marca, Cantidad, Destino, Servicio, FH_Carga, Estatus, Usuario1, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO folios (Folio, Area, Cliente, Marca, Destino, Servicio, FH_Carga, Estatus, Usuario1, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -310,7 +358,6 @@ class Transporte
         	$data->Area,
         	$data->Cliente,
             $data->Marca,
-			$data->Cantidad,
             $data->Destino,
             $data->Servicio,
 		    $data->FH_Carga,

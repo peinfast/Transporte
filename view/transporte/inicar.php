@@ -11,7 +11,7 @@
 
   <div class="form-group">
       <label>Folio</label>
-      <input type="text" name="Folio" value="<?php echo $alm->Folio; ?>" class="form-control" placeholder="Folio" />
+      <input type="text" name="Folio" value="<?php echo $alm->Folio; ?>" required class="form-control" placeholder="Folio" />
   </div>
 
   <div class="form-group">
@@ -44,7 +44,7 @@
 
     <div class="form-group">
         <label>Observaciones</label>
-        <input type="text" name="Observaciones3" value="<?php echo $alm->Observaciones3; ?>" class="form-control" placeholder="Observaciones" />
+        <input type="text" name="Observaciones3" value="<?php echo $alm->Observaciones3; ?>" required class="form-control" placeholder="Observaciones" />
     </div>
 
     <hr />

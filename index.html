@@ -3,7 +3,7 @@
 	<head>
 		<title>Ingram Micro</title>
 
-        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-widht,user-scalable=no,initial-scale=1.0,masimum-scale=1.0,minimun-scale=1.0" charset="utf-8" />
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 				<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -43,12 +43,12 @@
 									<form id="frm" class="" action="control/validar.php" method="POST">
 											<div class="form-group">
 													<label for="usuario">Usuario</label>
-													<input type="text" name="txtusuario" class="form-control" id="usuario" placeholder="Usuario">
+													<input type="text" name="txtusuario" class="form-control" id="usuario" required placeholder="Usuario">
 												</div>
 
 												<div class="form-group">
 													<label for="password">Constraseña</label>
-													<input type="password" name="txtpass" class="form-control" id="pass" placeholder="Contraseña">
+													<input type="password" name="txtpass" class="form-control" id="pass" required placeholder="Contraseña">
 												</div>
 												<button type="submit" id="boton" value="Enviar" name="button">Login</botton>
 											</form>

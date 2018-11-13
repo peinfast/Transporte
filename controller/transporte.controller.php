@@ -123,7 +123,7 @@ class TransporteController{
         $alm->Area = $_REQUEST['Area'];
         $alm->Cliente = $_REQUEST['Cliente'];
         $alm->Marca = $_REQUEST['Marca'];
-        $alm->Cantidad = $_REQUEST['Cantidad'];
+
         $alm->Destino = $_REQUEST['Destino'];
         $alm->Servicio = $_REQUEST['Servicio'];
         $alm->FH_Carga = $_REQUEST['FH_Carga'];
@@ -146,7 +146,7 @@ class TransporteController{
             : $this->model->Registrar($alm);
 
 
-        header('Location: index.php');
+        header('Location: inicio.php');
     }
     public function GActua(){
         $alm = new Transporte();
@@ -205,7 +205,7 @@ class TransporteController{
             : $this->model->Actualizar2($alm);
 
 
-        header('Location: index.php');
+        header('Location: inicio.php');
 
     }
     public function GCargaout(){
@@ -225,7 +225,7 @@ class TransporteController{
             : $this->model->Actualizar3($alm);
 
 
-        header('Location: index.php');
+        header('Location: inicio.php');
 
     }
     public function Avanzada(){

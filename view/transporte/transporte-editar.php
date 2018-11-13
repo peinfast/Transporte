@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <label>Area</label>
-        <select name="Servicio" class="form-control">
+        <select name="Area" class="form-control">
             <option value="L1bre">L1bre</option>
             <option value="Logistica Inversa">Logistica Inversa</option>
             <option value="Movilidad">Movilidad</option>
@@ -38,11 +38,6 @@
     </div>
 
     <div class="form-group">
-        <label>Cantidad</label>
-        <input type="number" name="Cantidad" value="<?php echo $alm->Cantidad; ?>" class="form-control" placeholder="Ingrese cantidad del Cargamento" />
-    </div>
-
-    <div class="form-group">
         <label>Destino</label>
         <input type="text" name="Destino" value="<?php echo $alm->Destino; ?>" class="form-control" placeholder="Ingrese el destino del Cargamento" />
     </div>
@@ -52,6 +47,7 @@
         <select name="Servicio" class="form-control">
             <option value="Carga">Carga</option>
             <option value="Recibo">Recibo</option>
+            <option value="Devolucion">Devolucion</option>
         </select>
     </div>
 
