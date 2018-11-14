@@ -22,7 +22,7 @@
 
     <tbody>
     <?php foreach($this->model->rojo() as $r): ?>
-        <tr style="background-color: red;">
+        <tr style="background-color: tomato;">
             <td><?php echo $r->Folio; ?></td>
             <td><?php echo $r->Area; ?></td>
             <td><?php echo $r->Cliente; ?></td>

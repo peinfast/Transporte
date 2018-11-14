@@ -16,14 +16,7 @@ if(!empty($_POST['buscar'])){
     //get content from database
     $query = $db->query("SELECT * FROM folios WHERE Folio= '".$_POST['buscar']."'");
     $row = mysqli_fetch_array($query);
-    echo $row['Folio'];
-    echo $row['Cliente'];
-    echo $row['Marca'];
-    echo $row['Estatus'];
-    echo $row['Estatus2'];
-    echo $row['Estatus3'];
-    echo $row['Estatus4'];
-    echo $row['Estatus5'];
+    echo $row['Folio'].', ' $row['Cliente'];
 
 }else{
     echo 'Content not found....1';
