@@ -19,33 +19,73 @@ class TransporteController{
         require_once 'view/transporte/transporte.php';
         require_once 'view/footer.php';
     }
+    public function General(){
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/transporte.php';
+        require_once 'view/footer.php';
+    }
+    public function Operaciones(){
+        require_once 'view/up.php';
+        require_once 'view/transporte/transporte.php';
+        require_once 'view/footer.php';
+    }
     public function L1bre(){
-        require_once 'view/header.php';
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/L1bre.php';
+        require_once 'view/footer.php';
+    }
+    public function L1brem(){
+        require_once 'view/up.php';
         require_once 'view/transporte/L1bre.php';
         require_once 'view/footer.php';
     }
     public function Logistica(){
-        require_once 'view/header.php';
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/Logistica.php';
+        require_once 'view/footer.php';
+    }
+    public function Logisticam(){
+        require_once 'view/up.php';
         require_once 'view/transporte/Logistica.php';
         require_once 'view/footer.php';
     }
     public function Movilidad(){
-        require_once 'view/header.php';
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/Movilidad.php';
+        require_once 'view/footer.php';
+    }
+    public function Movilidadm(){
+        require_once 'view/up.php';
         require_once 'view/transporte/Movilidad.php';
         require_once 'view/footer.php';
     }
     public function Proyectos(){
-        require_once 'view/header.php';
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/Proyecto.php';
+        require_once 'view/footer.php';
+    }
+    public function Proyectosm(){
+        require_once 'view/up.php';
         require_once 'view/transporte/Proyecto.php';
         require_once 'view/footer.php';
     }
     public function Recibo(){
-        require_once 'view/header.php';
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/Recibo.php';
+        require_once 'view/footer.php';
+    }
+    public function Recibom(){
+        require_once 'view/up.php';
         require_once 'view/transporte/Recibo.php';
         require_once 'view/footer.php';
     }
     public function Retail(){
-        require_once 'view/header.php';
+        require_once 'view/arriba.php';
+        require_once 'view/transporte/Retail.php';
+        require_once 'view/footer.php';
+    }
+    public function Retailm(){
+        require_once 'view/up.php';
         require_once 'view/transporte/Retail.php';
         require_once 'view/footer.php';
     }
@@ -67,7 +107,7 @@ class TransporteController{
             $alm = $this->model->Obtener($_REQUEST['id']);
         }
 
-        require_once 'view/cab.php';
+        require_once 'view/up.php';
         require_once 'view/transporte/transporte-editar.php';
         require_once 'view/footer.php';
     }
@@ -123,12 +163,12 @@ class TransporteController{
         $alm->Area = $_REQUEST['Area'];
         $alm->Cliente = $_REQUEST['Cliente'];
         $alm->Marca = $_REQUEST['Marca'];
-
+        $alm->CantidadUnidades = $_REQUEST['CantidadUnidades'];
         $alm->Destino = $_REQUEST['Destino'];
         $alm->Servicio = $_REQUEST['Servicio'];
         $alm->FH_Carga = $_REQUEST['FH_Carga'];
         $alm->Estatus = $_REQUEST['Estatus'];
-        //$alm->FH_Cedic = $_REQUEST['FH_Cedic'];
+
         $alm->Usuario1 = $_REQUEST['Usuario1'];
         //$alm->FH_Carga = $_REQUEST['Cortina'];
         //$alm->FH_Carga = $_REQUEST['FH_Arribo'];
@@ -142,11 +182,11 @@ class TransporteController{
 	    $alm->Observaciones = $_REQUEST['Observaciones'];
 
         $alm->id > 0
-            ? $this->model->Actualizar($alm)
+            ? $this->model->Registrar($alm)
             : $this->model->Registrar($alm);
 
 
-        header('Location: inicio.php');
+        header('Location: operaciones.php');
     }
     public function GActua(){
         $alm = new Transporte();
@@ -165,7 +205,7 @@ class TransporteController{
             : $this->model->Actualizar($alm);
 
 
-        header('Location: index.php');
+        header('Location: seguridad.php');
 
     }
     public function GActuaout(){
@@ -185,7 +225,7 @@ class TransporteController{
             : $this->model->Actualizar4($alm);
 
 
-        header('Location: index.php');
+        header('Location: seguridad.php');
 
     }
     public function GCarga(){
@@ -193,7 +233,7 @@ class TransporteController{
 
 
 
-        //$alm->FH_Arribo = $_REQUEST['FH_Arribo'];
+        $alm->Cortina = $_REQUEST['Cortina'];
         $alm->Usuario3 = $_REQUEST['Usuario3'];
         $alm->Estatus3 = $_REQUEST['Estatus3'];
         $alm->Observaciones3 = $_REQUEST['Observaciones3'];
@@ -205,7 +245,7 @@ class TransporteController{
             : $this->model->Actualizar2($alm);
 
 
-        header('Location: inicio.php');
+        header('Location: prevension.php');
 
     }
     public function GCargaout(){
@@ -213,7 +253,7 @@ class TransporteController{
 
 
 
-        //$alm->FH_Arribo = $_REQUEST['FH_Arribo'];
+        $alm->EstatusProducto = $_REQUEST['EstatusProducto'];
         $alm->Usuario4 = $_REQUEST['Usuario4'];
         $alm->Estatus4 = $_REQUEST['Estatus4'];
         $alm->Observaciones4 = $_REQUEST['Observaciones4'];
@@ -225,7 +265,7 @@ class TransporteController{
             : $this->model->Actualizar3($alm);
 
 
-        header('Location: inicio.php');
+        header('Location: prevension.php');
 
     }
     public function Avanzada(){

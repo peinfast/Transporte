@@ -16,12 +16,19 @@ require('conexion.php');
 			if($filas==1 && $tipo==1)
 			{
 					$_SESSION['txtusuario']=$usuario;
-
-					header("Location: ../index.php");
+					header("Location: ../seguridad.php");
 			}
 			if ($filas==1 && $tipo==2) {
 					$_SESSION['txtusuario']=$usuario;
-					header("Location: ../inicio.php");
+					header("Location: ../prevension.php");
+			}
+			if ($filas==1 && $tipo==3) {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../gerente.php");
+			}
+			if ($filas==1 && $tipo==4) {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../operaciones.php");
 			}
 			else
 			{

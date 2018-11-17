@@ -22,6 +22,14 @@
       </select>
   </div>
 
+  <div class="form-group">
+      <label>Estatus del Producto</label>
+      <select name="EstatusProducto" class="form-control">
+          <option value="Validado">Validado</option>
+          <option value="No validado">No validado</option>
+      </select>
+  </div>
+
     <input type="hidden" name="Usuario4" value="<?php echo $user; ?>"  class="form-control">
 
     <div class="form-group">

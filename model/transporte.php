@@ -11,6 +11,7 @@ class Transporte
 		public $Cantidad;
     public $Destino;
     public $Servicio;
+		public $CantidadUnidades;
 		public $FH_Carga;
     public $Estatus;
     public $FH_Cedic;
@@ -491,14 +492,14 @@ class Transporte
 	{
 		try
 		{
-			$sql = "UPDATE folios  SET Estatus4 = ?, FH_Conclu_CarDesc = now(), Usuario4 = ?, Observaciones4 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus4 = ?, EstatusProducto = ?, FH_Conclu_CarDesc = now(), Usuario4 = ?, Observaciones4 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Estatus4,
-							//$data->FH_Arribo,
+							$data->EstatusProducto,
 							$data->Usuario4,
 							$data->Observaciones4,
 							$data->Folio
@@ -540,7 +541,7 @@ class Transporte
 
 		try
 		{
-		$sql = "INSERT INTO folios (Folio, Area, Cliente, Marca, Destino, Servicio, FH_Carga, Estatus, Usuario1, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO folios (Folio, Area, Cliente, Marca, CantidadUnidades, Destino, Servicio, FH_Carga, Estatus, Usuario1, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -550,11 +551,11 @@ class Transporte
         	$data->Area,
         	$data->Cliente,
             $data->Marca,
+						$data->CantidadUnidades,
             $data->Destino,
             $data->Servicio,
 		    $data->FH_Carga,
 		    $data->Estatus,
-		    //$data->FH_Cedic,
 		    $data->Usuario1,
 		    $data->Observaciones
 

@@ -83,12 +83,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="seguridad.php" class="navbar-brand"><img src="assets/img/logo.png" width="100"></a></div>
+                <a href="gerente.php" class="navbar-brand"><img src="assets/img/logo.png" width="100"></a></div>
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="?c=Transporte&a=Actua">Caseta Inicio</a></li>
-                        <li><a href="?c=Transporte&a=Actuaout">Caseta Fin</a></li>
+                        <li><a href="?c=Transporte&a=L1bre">L1bre</a></li>
+                        <li><a href="?c=Transporte&a=Logistica">Logistica Inversa</a></li>
+                        <li><a href="?c=Transporte&a=Movilidad">Movilidad</a></li>
+                        <li><a href="?c=Transporte&a=Proyectos">Proyectos</a></li>
+                        <li><a href="?c=Transporte&a=Recibo">Recibo</a></li>
+                        <li><a href="?c=Transporte&a=Retail">Retail</a></li>
                     </ul>
                     <form id="formulario" method="post" class="navbar-form navbar-left">
                         <div class="form-group">
@@ -101,7 +105,7 @@
 
         </nav>
 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="vertical-alignment-helper">
            <div class="modal-dialog vertical-align-center" role="document">
 		           <div class="modal-content">

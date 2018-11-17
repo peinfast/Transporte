@@ -18,6 +18,7 @@
 							}
 							setInterval('recarga()',300000)
 			  </script>
+
 	</header>
     <body>
 		<?php
@@ -26,6 +27,6 @@
 		    $usuases=$_SESSION['txtusuario'];
 		    $user=htmlspecialchars($usuases);
 		  }
-			include 'menu.php';
+			include 'side.php';
 		 ?>
     <div class="container">

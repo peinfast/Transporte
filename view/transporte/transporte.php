@@ -14,6 +14,7 @@
             <th style="width:120px;">Destino</th>
             <th style="width:120px;">Servicio</th>
             <th style="width:120px;">FH Carga</th>
+            <th style="width:120px;">Estatus Producto</th>
             <th style="width:120px;">Estatus</th>
 
         </tr>
@@ -30,7 +31,24 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->Estatus; ?></td>
+            <td><?php echo $r->EstatusProducto; ?></td>
+            <td><?php
+            if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus;
+            }
+            elseif (($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus2;
+            }
+            elseif (($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus3;
+            }
+            elseif ($r->Estatus5==null) {
+                echo $r->Estatus4;
+            }
+            else{
+                echo $r->Estatus5;
+            }
+             ?></td>
         </tr>
     <?php endforeach; ?>
     <?php foreach($this->model->amarillo() as $r): ?>
@@ -42,7 +60,24 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->Estatus; ?></td>
+            <td><?php echo $r->EstatusProducto; ?></td>
+            <td><?php
+            if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus;
+            }
+            elseif (($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus2;
+            }
+            elseif (($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus3;
+            }
+            elseif ($r->Estatus5==null) {
+                echo $r->Estatus4;
+            }
+            else{
+                echo $r->Estatus5;
+            }
+            ?></td>
         </tr>
     <?php endforeach; ?>
     <?php foreach($this->model->verde() as $r): ?>
@@ -54,8 +89,25 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->Estatus; ?></td>
-        </tr>
+            <td><?php echo $r->EstatusProducto; ?></td>
+            <td><?php
+                if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                    echo $r->Estatus;
+                }
+                elseif (($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                    echo $r->Estatus2;
+                }
+                elseif (($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                    echo $r->Estatus3;
+                }
+                elseif ($r->Estatus5==null) {
+                    echo $r->Estatus4;
+                }
+                else{
+                    echo $r->Estatus5;
+                }
+            ?></td>
+            </tr>
     <?php endforeach; ?>
     </tbody>
 </table>

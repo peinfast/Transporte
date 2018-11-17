@@ -37,32 +37,6 @@
 	             });
 	            });
 	      </script>
-        <style media="screen">
-        .vertical-alignment-helper {
-          display:table;
-          height: 100%;
-          width: 100%;
-          pointer-events:none;
-        }
-        .vertical-align-center {
-  /* To center vertically */
-        display: table-cell;
-        vertical-align: middle;
-        pointer-events:none;
-        left: 40px;
-        }
-        .modal-content {
-  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-        width:inherit;
-        max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
-        height:inherit;
-  /* To center horizontally */
-        margin: 0 auto;
-        pointer-events:all;
-        }
-        </style>
-
-
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -83,14 +57,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="seguridad.php" class="navbar-brand"><img src="assets/img/logo.png" width="100"></a></div>
+                <a href="operaciones.php" class="navbar-brand"><img src="assets/img/logo.png" width="100"></a></div>
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="?c=Transporte&a=Actua">Caseta Inicio</a></li>
-                        <li><a href="?c=Transporte&a=Actuaout">Caseta Fin</a></li>
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Area
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="?c=Transporte&a=L1brem">L1bre</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?c=Transporte&a=Logisticam">Logistica Inversa</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?c=Transporte&a=Movilidadm">Movilidad</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?c=Transporte&a=Proyectosm">Proyectos</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?c=Transporte&a=Recibom">Recibo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?c=Transporte&a=Retailm">Retail</a>
+                      </div>
+                    </li>
+                        <li><a href="?c=Transporte&a=Clab">Registro</a></li>
                     </ul>
-                    <form id="formulario" method="post" class="navbar-form navbar-left">
+                    <form class="navbar-form navbar-left" method="post" id="formulario">
                         <div class="form-group">
                             <input type="text" name="buscar" class="form-control"></div>
                             <input type="button" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg" data-target="#miModal">
@@ -100,8 +91,7 @@
                 </div>
 
         </nav>
-
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="vertical-alignment-helper">
            <div class="modal-dialog vertical-align-center" role="document">
 		           <div class="modal-content">
@@ -112,17 +102,13 @@
 				                               <h4 class="modal-title" id="myModalLabel">Informacion</h4>
 			             </div>
 			             <div class="modal-body">
-                     <?php
-                            include ('model/busqueda.php');
-                            echo $row['Folio'];
-                            echo $row['Cliente'];
-                            echo $row['Marca'];
-                     ?>
+                        Cosas Varias GG izzzzziiiiiiiii...
                    </div>
 		           </div>
 	           </div>
              </div>
         </div>
+
 
         <footer>
 

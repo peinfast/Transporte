@@ -29,7 +29,23 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio == 1 ? 'Carga' : 'Devolucion' ; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->Estatus; ?></td>
+            <td><?php
+            if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus;
+            }
+            elseif (($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus2;
+            }
+            elseif (($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus3;
+            }
+            elseif ($r->Estatus5==null) {
+                echo $r->Estatus4;
+            }
+            else{
+                echo $r->Estatus5;
+            }
+             ?></td>
         </tr>
     <?php endforeach; ?>
     <?php foreach($this->model->amarilloL1b() as $r): ?>
@@ -41,7 +57,23 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->Estatus; ?></td>
+            <td><?php
+            if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus;
+            }
+            elseif (($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus2;
+            }
+            elseif (($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus3;
+            }
+            elseif ($r->Estatus5==null) {
+                echo $r->Estatus4;
+            }
+            else{
+                echo $r->Estatus5;
+            }
+             ?></td>
         </tr>
     <?php endforeach; ?>
     <?php foreach($this->model->verdeL1b() as $r): ?>
@@ -53,7 +85,23 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->Estatus; ?></td>
+            <td><?php
+            if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus;
+            }
+            elseif (($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus2;
+            }
+            elseif (($r->Estatus4==null) AND ($r->Estatus5==null)) {
+                echo $r->Estatus3;
+            }
+            elseif ($r->Estatus5==null) {
+                echo $r->Estatus4;
+            }
+            else{
+                echo $r->Estatus5;
+            }
+             ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
