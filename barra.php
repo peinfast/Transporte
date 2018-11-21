@@ -19,24 +19,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script>
-	           $(document).on('ready',function(){
-
-	              $('#btn-ingresar').click(function(){
-		                var url = "model/busqueda.php";
-
-		                $.ajax({
-		                    type: "POST",
-		                     url: url,
-		                    data: $("#formulario").serialize(),
-		                 success: function(data)
-		                 {
-			                    $('#resp').html(data);
-		                 }
-		                 });
-	             });
-	            });
-	      </script>
+        
         <style media="screen">
         .vertical-alignment-helper {
           display:table;
@@ -94,10 +77,10 @@
                         <li><a href="?c=Transporte&a=Recibo">Recibo</a></li>
                         <li><a href="?c=Transporte&a=Retail">Retail</a></li>
                     </ul>
-                    <form id="formulario" method="post" class="navbar-form navbar-left">
+                    <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-left" action="model/busqueda.php">
                         <div class="form-group">
                             <input type="text" name="buscar" class="form-control"></div>
-                            <input type="button" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg" data-target="#miModal">
+                            <button type="submit" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg">Buscar</button>
                     </form>
                     <div id="resp"></div>
 

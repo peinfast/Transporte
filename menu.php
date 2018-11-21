@@ -19,24 +19,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script>
-	           $(document).on('ready',function(){
 
-	              $('#btn-ingresar').click(function(){
-		                var url = "model/busqueda.php";
-
-		                $.ajax({
-		                    type: "POST",
-		                     url: url,
-		                    data: $("#formulario").serialize(),
-		                 success: function(data)
-		                 {
-			                    $('#resp').html(data);
-		                 }
-		                 });
-	             });
-	            });
-	      </script>
         <style media="screen">
         .vertical-alignment-helper {
           display:table;
@@ -90,39 +73,16 @@
                         <li><a href="?c=Transporte&a=Actua">Caseta Inicio</a></li>
                         <li><a href="?c=Transporte&a=Actuaout">Caseta Fin</a></li>
                     </ul>
-                    <form id="formulario" method="post" class="navbar-form navbar-left">
+                    <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-left" action="model/busqueda.php">
                         <div class="form-group">
                             <input type="text" name="buscar" class="form-control"></div>
-                            <input type="button" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg" data-target="#miModal">
+                            <button type="submit" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg">Buscar</button>
                     </form>
                     <div id="resp"></div>
 
                 </div>
 
         </nav>
-
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="vertical-alignment-helper">
-           <div class="modal-dialog vertical-align-center" role="document">
-		           <div class="modal-content">
-			              <div class="modal-header">
-				                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					                       <span aria-hidden="true">&times;</span>
-				                           </button>
-				                               <h4 class="modal-title" id="myModalLabel">Informacion</h4>
-			             </div>
-			             <div class="modal-body">
-                     <?php
-                            include ('model/busqueda.php');
-                            echo $row['Folio'];
-                            echo $row['Cliente'];
-                            echo $row['Marca'];
-                     ?>
-                   </div>
-		           </div>
-	           </div>
-             </div>
-        </div>
 
         <footer>
 
