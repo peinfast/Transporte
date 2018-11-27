@@ -1,4 +1,7 @@
 <?php
+require('../assets/fpdf.php');
+$pdf=new FPDF();
+$pdf->AddPage();
 if(!empty($_POST['buscar'])){
     //DB details
     $dbHost = 'localhost';
@@ -16,10 +19,20 @@ if(!empty($_POST['buscar'])){
     //get content from database
     $query = $db->query("SELECT * FROM folios WHERE Folio= '".$_POST['buscar']."'");
     $row = mysqli_fetch_array($query);
-    echo $row['Folio'].' '.$row['Area'].' '.$row['Cliente'].' '.$row['Marca'].' '.$row['Destino'].' '.$row['Servicio'].' '.$row['Estatus5'].' ';
-    echo $row['Estatus4'].' '.$row['Estatus3'].' '.$row['Estatus2'].' '.$row['Estatus'].' '.$row['Usuario5'].' '.$row['Usuario4'].' '.$row['Usuario3'].' ';
-    echo $row['Usuario2'].' '.$row['Usuario1'].' '.$row['Observaciones5'].' '.$row['Observaciones4'].' '.$row['Observaciones3'].' '.$row['Observaciones2'].' '.$row['Observaciones'].' '.$row['Cortina'].' ';
-    echo $row['FH_Salida_Caseta'].' '.$row['FH_Conclu_CarDesc'].' '.$row['FH_Inicio_CarDesc'].' '.$row['FH_Arribo'].' '.$row['FH_Cedic'].' '.$row['FH_Carga'];
+    echo 'Folio: '.$row['Folio'].'<br />';
+    echo 'Area: '.$row['Area'].'<br />';
+    echo 'Cliente: '.$row['Cliente'].'<br />';
+    echo 'Marca: '.$row['Marca'].'<br />';
+    echo 'Destino: '.$row['Destino'].'<br />';
+    echo 'Servicio: '.$row['Servicio'].'<br />';
+    echo 'Cantidad de Unidades: '.$row['CantidadUnidades'].'<br />';
+    echo 'Cortina: '.$row['Cortina'].'<br />';
+    echo 'Estatus del Producto: '.$row['EstatusProducto'].'<br />';
+    echo '1er Usuario: '.$row['Usuario1'].'         '.'Fecha del Registro: '.$row['FH_Cedic'].'        '.'Estatus: '.$row['Estatus'].'        '.'Observaciones: '.$row['Observaciones'].'<br />';
+    echo '2do Usuario: '.$row['Usuario2'].'        '.'Fecha del Registro: '.$row['FH_Arribo'].'        '.'Estatus: '.$row['Estatus2'].'        '.'Observaciones: '.$row['Observaciones2'].'<br />';
+    echo '3er Usuario: '.$row['Usuario3'].'        '.'Fecha del Registro: '.$row['FH_Inicio_CarDesc'].'        '.'Estatus: '.$row['Estatus3'].'        '.'Observaciones: '.$row['Observaciones3'].'<br />';
+    echo '4to Usuario: '.$row['Usuario4'].'        '.'Fecha del Registro: '.$row['FH_Conclu_CarDesc'].'        '.'Estatus: '.$row['Estatus4'].'        '.'Observaciones: '.$row['Observaciones4'].'<br />';
+    echo '5to Usuario: '.$row['Usuario5'].'        '.'Fecha del Registro: '.$row['FH_Salida_Caseta'].'        '.'Estatus: '.$row['Estatus5'].'        '.'Observaciones: '.$row['Observaciones5'].'<br />';
 }else{
     echo 'Folio no encontrado';
 }

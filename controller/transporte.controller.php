@@ -24,9 +24,34 @@ class TransporteController{
         require_once 'view/transporte/transporte.php';
         require_once 'view/footer.php';
     }
-    public function Operaciones(){
-        require_once 'view/up.php';
-        require_once 'view/transporte/transporte.php';
+    public function OperacionesL1b(){
+        require_once 'view/upl1b.php';
+        require_once 'view/transporte/L1bre.php';
+        require_once 'view/footer.php';
+    }
+    public function OperacionesLI(){
+        require_once 'view/upli.php';
+        require_once 'view/transporte/Logistica.php';
+        require_once 'view/footer.php';
+    }
+    public function OperacionesMov(){
+        require_once 'view/upmov.php';
+        require_once 'view/transporte/Movilidad.php';
+        require_once 'view/footer.php';
+    }
+    public function OperacionesPro(){
+        require_once 'view/uppro.php';
+        require_once 'view/transporte/Proyecto.php';
+        require_once 'view/footer.php';
+    }
+    public function OperacionesRec(){
+        require_once 'view/uprec.php';
+        require_once 'view/transporte/Recibo.php';
+        require_once 'view/footer.php';
+    }
+    public function OperacionesRet(){
+        require_once 'view/upret.php';
+        require_once 'view/transporte/Retail.php';
         require_once 'view/footer.php';
     }
     public function L1bre(){
@@ -107,7 +132,62 @@ class TransporteController{
             $alm = $this->model->Obtener($_REQUEST['id']);
         }
 
-        require_once 'view/up.php';
+        require_once 'view/upl1b.php';
+        require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
+    public function Clabli(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upli.php';
+        require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
+    public function Clabmov(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upmov.php';
+        require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
+    public function Clabpro(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/uppro.php';
+        require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
+    public function Clabrec(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/uprec.php';
+        require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
+    public function Clabret(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upret.php';
         require_once 'view/transporte/transporte-editar.php';
         require_once 'view/footer.php';
     }

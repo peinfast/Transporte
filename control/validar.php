@@ -11,24 +11,44 @@ require('conexion.php');
 
 			$filas=mysqli_num_rows($resultado);
 			$row=mysqli_fetch_array($resultado);
-			$tipo=$row['access'];
+			$area=$row['area'];
 
-			if($filas==1 && $tipo==1)
+			if($filas==1 && $area=="Caseta")
 			{
 					$_SESSION['txtusuario']=$usuario;
 					header("Location: ../seguridad.php");
 			}
-			if ($filas==1 && $tipo==2) {
+			if ($filas==1 && $area=="Prevension") {
 					$_SESSION['txtusuario']=$usuario;
 					header("Location: ../prevension.php");
 			}
-			if ($filas==1 && $tipo==3) {
+			if ($filas==1 && $area=="Gerente") {
 					$_SESSION['txtusuario']=$usuario;
 					header("Location: ../gerente.php");
 			}
-			if ($filas==1 && $tipo==4) {
+			if ($filas==1 && $area=="L1bre") {
 					$_SESSION['txtusuario']=$usuario;
-					header("Location: ../operaciones.php");
+					header("Location: ../operacionesl1b.php");
+			}
+			if ($filas==1 && $area=="Logistica Inversa") {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../operacionesli.php");
+			}
+			if ($filas==1 && $area=="Movilidad") {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../operacionesmov.php");
+			}
+			if ($filas==1 && $area=="Proyectos") {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../operacionespro.php");
+			}
+			if ($filas==1 && $area=="Recibo") {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../operacionesrec.php");
+			}
+			if ($filas==1 && $area=="Retail") {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../operacionesret.php");
 			}
 			else
 			{

@@ -16,6 +16,9 @@
         <script type="text/javascript" src="assets/js/modernizr-2.6.2.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/main.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     </head>
     <body>
@@ -37,16 +40,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="gerente.php" class="navbar-brand"><img src="assets/img/logo.png" width="100"></a></div>
+                <a href="operacionesret.php" class="navbar-brand"><img src="assets/img/logo.png" width="100"></a></div>
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="?c=Transporte&a=L1bre">L1bre</a></li>
-                        <li><a href="?c=Transporte&a=Logistica">Logistica Inversa</a></li>
-                        <li><a href="?c=Transporte&a=Movilidad">Movilidad</a></li>
-                        <li><a href="?c=Transporte&a=Proyectos">Proyectos</a></li>
-                        <li><a href="?c=Transporte&a=Recibo">Recibo</a></li>
-                        <li><a href="?c=Transporte&a=Retail">Retail</a></li>
+                        <li class="nav-item dropdown">
+
+                        <li><a href="?c=Transporte&a=Clabret">Registro</a></li>
                     </ul>
                     <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-left" action="model/busqueda.php">
                         <div class="form-group">
@@ -58,7 +58,6 @@
                 </div>
 
         </nav>
-
         <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="vertical-alignment-helper">
            <div class="modal-dialog vertical-align-center" role="document">
@@ -70,12 +69,13 @@
 				                               <h4 class="modal-title" id="myModalLabel">Informacion</h4>
 			             </div>
 			             <div class="modal-body">
-                     GG izi
+                        Cosas Varias GG izzzzziiiiiiiii...
                    </div>
 		           </div>
 	           </div>
              </div>
         </div>
+
 
         <footer>
 

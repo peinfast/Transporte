@@ -1,8 +1,13 @@
 <h1 class="page-header">Retail</h1>
 
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="?c=Transporte&a=Crud">Nuevo Folio</a>
+    <a class="btn btn-primary" href="index.html">Cerrar Sesion</a>
+    <form action='control/control.php' method='post' enctype="multipart/form-data">
+        <input type='file' name='sel_file' size='20'>
+        <input type='submit' name='submit' value='submit'>
+    </form>
 </div>
+
 
 <table>
     <thead>
