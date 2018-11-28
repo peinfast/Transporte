@@ -40,7 +40,23 @@
           <option value="14">14</option>
       </select>
   </div>
-    <input type="hidden" name="Usuario3" value="<?php echo $user; ?>" class="form-control">
+    <input type="hidden" name="Usuario3" value="<?php
+    $dbHost = 'localhost';
+    $dbUsername = 'root';
+    $dbPassword = '';
+    $dbName = 'cargamentos';
+
+    //Create connection and select DB
+    $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+    if ($db->connect_error) {
+        die("Unable to connect database: " . $db->connect_error);
+    }
+    $query = $db->query("SELECT nombre FROM usuarios WHERE usuario='$user'");
+    $row = mysqli_fetch_array($query);
+    $nombre=$row['nombre'];
+    echo $nombre;
+   ?>" class="form-control">
 
     <div class="form-group">
         <label>Observaciones</label>

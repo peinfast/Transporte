@@ -48,7 +48,7 @@
 
                         <li><a href="?c=Transporte&a=Clabli">Registro</a></li>
                     </ul>
-                    <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-left" action="model/busqueda.php">
+                    <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-right" action="model/busqueda.php">
                         <div class="form-group">
                             <input type="text" name="buscar" class="form-control"></div>
                             <button type="submit" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg">Buscar</button>
@@ -56,7 +56,9 @@
                     <div id="resp"></div>
 
                 </div>
-
+                <ul class="nav navbar-nav" style="float:right;">
+                    <li><a href="index.html">Cerrar Sesion</a></li>
+                </ul>
         </nav>
         <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="vertical-alignment-helper">

@@ -1,6 +1,5 @@
 <h1 class="page-header">L1bre</h1>
 <div class="well well-sm text-right">
-    <a class="btn btn-primary" href="index.html">Cerrar Sesion</a>
     <form action='control/control.php' method='post' enctype="multipart/form-data">
         <input type='file' name='sel_file' size='20'>
         <input type='submit' name='submit' value='submit'>
@@ -48,6 +47,9 @@
                 echo $r->Estatus5;
             }
              ?></td>
+            <td>
+               <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+            </td>
         </tr>
     <?php endforeach; ?>
     <?php foreach($this->model->amarilloL1b() as $r): ?>

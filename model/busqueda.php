@@ -1,7 +1,4 @@
 <?php
-require('../assets/fpdf.php');
-$pdf=new FPDF();
-$pdf->AddPage();
 if(!empty($_POST['buscar'])){
     //DB details
     $dbHost = 'localhost';

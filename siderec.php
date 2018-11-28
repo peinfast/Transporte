@@ -48,13 +48,15 @@
 
                         <li><a href="?c=Transporte&a=Clabrec">Registro</a></li>
                     </ul>
-                    <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-left" action="model/busqueda.php">
+                    <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-right" action="model/busqueda.php">
                         <div class="form-group">
                             <input type="text" name="buscar" class="form-control"></div>
                             <button type="submit" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg">Buscar</button>
                     </form>
                     <div id="resp"></div>
-
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html" style="float:right;">Cerrar Sesion</a></li>
+                    </ul>
                 </div>
 
         </nav>

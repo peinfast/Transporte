@@ -19,6 +19,10 @@ class TransporteController{
         require_once 'view/transporte/transporte.php';
         require_once 'view/footer.php';
     }
+    public function Eliminar(){
+        $this->model->Eliminar($_REQUEST['id']);
+        header('Location: operacionesl1b.php');
+    }
     public function General(){
         require_once 'view/arriba.php';
         require_once 'view/transporte/transporte.php';
@@ -238,7 +242,6 @@ class TransporteController{
     public function Guardar(){
         $alm = new Transporte();
 
-        //$alm->id = $_REQUEST['id'];
         $alm->Folio = $_REQUEST['Folio'];
         $alm->Area = $_REQUEST['Area'];
         $alm->Cliente = $_REQUEST['Cliente'];
@@ -248,25 +251,31 @@ class TransporteController{
         $alm->Servicio = $_REQUEST['Servicio'];
         $alm->FH_Carga = $_REQUEST['FH_Carga'];
         $alm->Estatus = $_REQUEST['Estatus'];
-
         $alm->Usuario1 = $_REQUEST['Usuario1'];
-        //$alm->FH_Carga = $_REQUEST['Cortina'];
-        //$alm->FH_Carga = $_REQUEST['FH_Arribo'];
-        //$alm->FH_Carga = $_REQUEST['Usuario2'];
-        //$alm->FH_Carga = $_REQUEST['FH_Inicio_CarDesc'];
-        //$alm->FH_Carga = $_REQUEST['Usuario3'];
-        //$alm->FH_Carga = $_REQUEST['FH_Conclu_CarDesc'];
-        //$alm->FH_Carga = $_REQUEST['Usuario4'];
-        //$alm->FH_Carga = $_REQUEST['FH_Salida_Caseta'];
-        //$alm->FH_Carga = $_REQUEST['Usuario5'];
-	    $alm->Observaciones = $_REQUEST['Observaciones'];
+	      $alm->Observaciones = $_REQUEST['Observaciones'];
 
         $alm->id > 0
             ? $this->model->Registrar($alm)
             : $this->model->Registrar($alm);
 
-
-        header('Location: operaciones.php');
+        if ($alm->Area=="L1bre") {
+                header('Location: operacionesl1b.php');
+        }
+        if ($alm->Area=="Logistica Inversa") {
+                header('Location: operacionesli.php');
+        }
+        if ($alm->Area=="Movilidad") {
+                header('Location: operacionesmov.php');
+        }
+        if ($alm->Area=="Proyectos") {
+                header('Location: operacionespro.php');
+        }
+        if ($alm->Area=="Recibo") {
+                header('Location: operacionesrec.php');
+        }
+        if ($alm->Area=="Retail") {
+            header('Location: operacionesret.php');
+        }
     }
     public function GActua(){
         $alm = new Transporte();

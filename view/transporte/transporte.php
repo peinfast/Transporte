@@ -1,9 +1,5 @@
 <h1 class="page-header">Control de Arribos</h1>
 
-<div class="well well-sm text-right">
-    <a class="btn btn-primary" href="index.html">Cerrar Sesion</a>
-</div>
-
 <table>
     <thead>
         <tr>

@@ -22,11 +22,23 @@
       </select>
   </div>
 
+    <input type="hidden" name="Usuario2" value="<?php
+    $dbHost = 'localhost';
+    $dbUsername = 'root';
+    $dbPassword = '';
+    $dbName = 'cargamentos';
 
+    //Create connection and select DB
+    $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-
-
-    <input type="hidden" name="Usuario2" value="<?php echo $user; ?>" class="form-control">
+    if ($db->connect_error) {
+        die("Unable to connect database: " . $db->connect_error);
+    }
+    $query = $db->query("SELECT nombre FROM usuarios WHERE usuario='$user'");
+    $row = mysqli_fetch_array($query);
+    $nombre=$row['nombre'];
+    echo $nombre;
+    ?>" class="form-control">
 
     <div class="form-group">
         <label>Observaciones</label>
