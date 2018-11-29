@@ -9,10 +9,8 @@
     <thead>
         <tr>
             <th style="width:180px;">Folio</th>
-            <th style="width:120px;">Area</th>
-            <th>Cliente</th>
-            <th>Marca</th>
-
+            <th style="width:120px;">Cliente</th>
+            <th style="width:120px;">Marca</th>
             <th style="width:120px;">Destino</th>
             <th style="width:120px;">Servicio</th>
             <th style="width:120px;">FH Carga</th>
@@ -24,7 +22,6 @@
     <?php foreach($this->model->rojoL1b() as $r): ?>
         <tr style="background-color: tomato;">
             <td><?php echo $r->Folio; ?></td>
-            <td><?php echo $r->Area; ?></td>
             <td><?php echo $r->Cliente; ?></td>
             <td><?php echo $r->Marca; ?></td>
             <td><?php echo $r->Destino; ?></td>
@@ -55,7 +52,6 @@
     <?php foreach($this->model->amarilloL1b() as $r): ?>
         <tr style="background-color: yellow;">
             <td><?php echo $r->Folio; ?></td>
-            <td><?php echo $r->Area; ?></td>
             <td><?php echo $r->Cliente; ?></td>
             <td><?php echo $r->Marca; ?></td>
             <td><?php echo $r->Destino; ?></td>
@@ -78,12 +74,14 @@
                 echo $r->Estatus5;
             }
              ?></td>
+            <td>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+            </td>
         </tr>
     <?php endforeach; ?>
     <?php foreach($this->model->verdeL1b() as $r): ?>
         <tr style="background-color: green;">
             <td><?php echo $r->Folio; ?></td>
-            <td><?php echo $r->Area; ?></td>
             <td><?php echo $r->Cliente; ?></td>
             <td><?php echo $r->Marca; ?></td>
             <td><?php echo $r->Destino; ?></td>
@@ -106,6 +104,9 @@
                 echo $r->Estatus5;
             }
              ?></td>
+            <td>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+            </td>
         </tr>
     <?php endforeach; ?>
     </tbody>

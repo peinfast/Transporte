@@ -432,7 +432,36 @@ class Transporte
 			die($e->getMessage());
 		}
 	}
+	public function Actualizame($data)
+	{
 
+		try
+		{
+
+			$sql = "UPDATE folios  SET Folio = ?, Cliente = ?, Marca = ?, CantidadUnidades = ?, Destino = ?, Servicio = ?, FH_Carga = ?, Observaciones = ? WHERE id = ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+
+							$data->Folio,
+				      $data->Cliente,
+				      $data->Marca,
+						  $data->CantidadUnidades,
+				      $data->Destino,
+				      $data->Servicio,
+						  $data->FH_Carga,
+						  $data->Observaciones,
+
+
+
+					)
+				);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 	public function Actualizar($data)
 	{
 
@@ -539,7 +568,7 @@ class Transporte
 			try
 			{
 				$stm = $this->pdo
-				            ->prepare("DELETE FROM folios WHERE id = ?");			          
+				            ->prepare("DELETE FROM folios WHERE id = ?");
 
 				$stm->execute(array($id));
 			} catch (Exception $e)

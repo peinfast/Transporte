@@ -20,8 +20,45 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Eliminar(){
-        $this->model->Eliminar($_REQUEST['id']);
-        header('Location: operacionesl1b.php');
+        $dbHost = 'localhost';
+        $dbUsername = 'root';
+        $dbPassword = '';
+        $dbName = 'cargamentos';
+
+        //Create connection and select DB
+        $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+        if ($db->connect_error) {
+            die("Unable to connect database: " . $db->connect_error);
+        }
+        $dni=$_REQUEST['id'];
+        $query = $db->query("SELECT Area FROM folios WHERE id='$dni'");
+        $row = mysqli_fetch_array($query);
+        $direarea=$row['Area'];
+        if ($direarea=="L1bre") {
+          $this->model->Eliminar($_REQUEST['id']);
+          header('Location: operacionesl1b.php');
+        }
+        if ($direarea=="Logistica Inversa") {
+          $this->model->Eliminar($_REQUEST['id']);
+          header('Location: operacionesli.php');
+        }
+        if ($direarea=="Movilidad") {
+          $this->model->Eliminar($_REQUEST['id']);
+          header('Location: operacionesmov.php');
+        }
+        if ($direarea=="Proyectos") {
+          $this->model->Eliminar($_REQUEST['id']);
+          header('Location: operacionespro.php');
+        }
+        if ($direarea=="Recibo") {
+          $this->model->Eliminar($_REQUEST['id']);
+          header('Location: operacionesrec.php');
+        }
+        if ($direarea=="Retail") {
+          $this->model->Eliminar($_REQUEST['id']);
+          header('Location: operacionesret.php');
+        }
     }
     public function General(){
         require_once 'view/arriba.php';
@@ -41,6 +78,11 @@ class TransporteController{
     public function OperacionesMov(){
         require_once 'view/upmov.php';
         require_once 'view/transporte/Movilidad.php';
+        require_once 'view/footer.php';
+    }
+    public function LeerMov(){
+        require_once 'view/leerhead.php';
+        require_once 'view/transporte/leer.php';
         require_once 'view/footer.php';
     }
     public function OperacionesPro(){
@@ -127,6 +169,17 @@ class TransporteController{
 
         require_once 'view/header.php';
         require_once 'view/transporte/transporte-editar.php';
+        require_once 'view/footer.php';
+    }
+    public function Editar(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/uppro.php';
+        require_once 'view/transporte/transporte-edit.php';
         require_once 'view/footer.php';
     }
     public function Clab(){
@@ -257,6 +310,41 @@ class TransporteController{
         $alm->id > 0
             ? $this->model->Registrar($alm)
             : $this->model->Registrar($alm);
+
+        if ($alm->Area=="L1bre") {
+                header('Location: operacionesl1b.php');
+        }
+        if ($alm->Area=="Logistica Inversa") {
+                header('Location: operacionesli.php');
+        }
+        if ($alm->Area=="Movilidad") {
+                header('Location: operacionesmov.php');
+        }
+        if ($alm->Area=="Proyectos") {
+                header('Location: operacionespro.php');
+        }
+        if ($alm->Area=="Recibo") {
+                header('Location: operacionesrec.php');
+        }
+        if ($alm->Area=="Retail") {
+            header('Location: operacionesret.php');
+        }
+    }
+    public function Guardame(){
+        $alm = new Transporte();
+
+        $alm->Folio = $_REQUEST['Folio'];
+        $alm->Cliente = $_REQUEST['Cliente'];
+        $alm->Marca = $_REQUEST['Marca'];
+        $alm->CantidadUnidades = $_REQUEST['CantidadUnidades'];
+        $alm->Destino = $_REQUEST['Destino'];
+        $alm->Servicio = $_REQUEST['Servicio'];
+        $alm->FH_Carga = $_REQUEST['FH_Carga'];
+	      $alm->Observaciones = $_REQUEST['Observaciones'];
+
+        $alm->id > 0
+            ? $this->model->Actualizame($alm)
+            : $this->model->Actualizame($alm);
 
         if ($alm->Area=="L1bre") {
                 header('Location: operacionesl1b.php');

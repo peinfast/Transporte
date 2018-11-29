@@ -12,7 +12,7 @@ require('conexion.php');
 			$filas=mysqli_num_rows($resultado);
 			$row=mysqli_fetch_array($resultado);
 			$area=$row['area'];
-
+			$tipo=$row['tipo'];
 			if($filas==1 && $area=="Caseta")
 			{
 					$_SESSION['txtusuario']=$usuario;
@@ -49,6 +49,10 @@ require('conexion.php');
 			if ($filas==1 && $area=="Retail") {
 					$_SESSION['txtusuario']=$usuario;
 					header("Location: ../operacionesret.php");
+			}
+			if ($filas==1 && $area=="Movilidad" && $tipo="Leer") {
+					$_SESSION['txtusuario']=$usuario;
+					header("Location: ../inder.php");
 			}
 			else
 			{

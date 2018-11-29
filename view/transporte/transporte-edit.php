@@ -7,7 +7,7 @@
   <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Nuevo Registro'; ?></li>
 </ol>
 
-<form id="frm-transporte" action="?c=Transporte&a=Guardar" method="post" enctype="multipart/form-data">
+<form id="frm-transporte" action="?c=Transporte&a=Guardame" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
 
     <div class="form-group">
