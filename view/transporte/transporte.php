@@ -1,17 +1,17 @@
-<h1 class="page-header">Control de Arribos</h1>
+<h1 class="page-header"></h1>
 
 <table>
     <thead>
         <tr>
             <th style="width:180px;">Folio</th>
-            <th style="width:120px;">Area</th>
-            <th>Cliente</th>
-            <th>Marca</th>
-            <th style="width:120px;">Destino</th>
-            <th style="width:120px;">Servicio</th>
-            <th style="width:120px;">FH Carga</th>
-            <th style="width:120px;">Estatus Producto</th>
-            <th style="width:120px;">Estatus</th>
+            <th style="width:180px;">Area</th>
+            <th style="width:180px;">Cliente</th>
+            <th style="width:180px;">Marca</th>
+            <th style="width:180px;">Destino</th>
+            <th style="width:180px;">Servicio</th>
+            <th style="width:180px;">FH Carga</th>
+            <th style="width:180px;">Estatus Producto</th>
+            <th style="width:180px;">Estatus</th>
 
         </tr>
     </thead>

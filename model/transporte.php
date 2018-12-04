@@ -438,20 +438,25 @@ class Transporte
 		try
 		{
 
-			$sql = "UPDATE folios  SET Folio = ?, Cliente = ?, Marca = ?, CantidadUnidades = ?, Destino = ?, Servicio = ?, FH_Carga = ?, Observaciones = ? WHERE id = ?";
+			$sql = "UPDATE folios  SET Folio = ?, Area = ?, Cliente = ?, Marca = ?, CantidadUnidades = ?, Destino = ?, Servicio = ?, FH_Carga = ?, Estatus = ?, FH_Cedic = ?, Usuario1 = ?, Observaciones = ? WHERE id = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Folio,
+							$data->Area,
 				      $data->Cliente,
 				      $data->Marca,
 						  $data->CantidadUnidades,
 				      $data->Destino,
 				      $data->Servicio,
 						  $data->FH_Carga,
+							$data->Estatus,
+							$data->FH_Cedic,
+							$data->Usuario1,
 						  $data->Observaciones,
+							$data->id
 
 
 

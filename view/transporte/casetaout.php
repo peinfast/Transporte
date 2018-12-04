@@ -1,7 +1,6 @@
 <h1 class="page-header">
-    <?php echo $alm->id != null ? $alm->Folio : 'Caseta Salida'; ?>
 </h1>
-
+<h2>Caseta Salida</h2>
 <ol class="breadcrumb">
   <li><a href="?c=Transporte">Folio</a></li>
   <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Actualizacion Salida'; ?></li>

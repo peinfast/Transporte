@@ -19,7 +19,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+        <style media="screen">
+              #menu{
+                  position: fixed;
+                  top:0px;
+                  width: 100%;
+              }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -32,7 +38,7 @@
         </header>
 
         <!--Barra de Navegacion-->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" id="menu">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Cambiar Navegacion</span>

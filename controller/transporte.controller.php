@@ -171,7 +171,7 @@ class TransporteController{
         require_once 'view/transporte/transporte-editar.php';
         require_once 'view/footer.php';
     }
-    public function Editar(){
+    public function Editarpro(){
         $alm = new Transporte();
 
         if(isset($_REQUEST['id'])){
@@ -179,6 +179,61 @@ class TransporteController{
         }
 
         require_once 'view/uppro.php';
+        require_once 'view/transporte/transporte-edit.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarl1b(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upl1b.php';
+        require_once 'view/transporte/transporte-edit.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarli(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upli.php';
+        require_once 'view/transporte/transporte-edit.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarmov(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upmov.php';
+        require_once 'view/transporte/transporte-edit.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarrec(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/uprec.php';
+        require_once 'view/transporte/transporte-edit.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarret(){
+        $alm = new Transporte();
+
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+
+        require_once 'view/upret.php';
         require_once 'view/transporte/transporte-edit.php';
         require_once 'view/footer.php';
     }
@@ -333,13 +388,18 @@ class TransporteController{
     public function Guardame(){
         $alm = new Transporte();
 
+        $alm->id = $_REQUEST['id'];
         $alm->Folio = $_REQUEST['Folio'];
+        $alm->Area = $_REQUEST['Area'];
         $alm->Cliente = $_REQUEST['Cliente'];
         $alm->Marca = $_REQUEST['Marca'];
         $alm->CantidadUnidades = $_REQUEST['CantidadUnidades'];
         $alm->Destino = $_REQUEST['Destino'];
         $alm->Servicio = $_REQUEST['Servicio'];
         $alm->FH_Carga = $_REQUEST['FH_Carga'];
+        $alm->Estatus = $_REQUEST['Estatus'];
+        $alm->FH_Cedic = $_REQUEST['FH_Cedic'];
+        $alm->Usuario1 = $_REQUEST['Usuario1'];
 	      $alm->Observaciones = $_REQUEST['Observaciones'];
 
         $alm->id > 0

@@ -16,6 +16,13 @@
         <script type="text/javascript" src="assets/js/modernizr-2.6.2.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/main.js"></script>
+        <style media="screen">
+              #menu{
+                  position: fixed;
+                  top:0px;
+                  width: 100%;
+              }
+        </style>
 
     </head>
     <body>
@@ -29,7 +36,7 @@
         </header>
 
         <!--Barra de Navegacion-->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" id="menu">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Cambiar Navegacion</span>
@@ -55,29 +62,32 @@
                     </form>
                     <div id="resp"></div>
                         <ul class="nav navbar-nav" style="float:right;">
+                            <li><a type="button" class="btn btn-primary" style="color:red;" data-toggle="modal" data-target="#exampleModal">Subir Archivo</a></li>
                             <li><a href="index.html">Cerrar Sesion</a></li>
                         </ul>
                 </div>
 
         </nav>
 
-        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="vertical-alignment-helper">
-           <div class="modal-dialog vertical-align-center" role="document">
-		           <div class="modal-content">
-			              <div class="modal-header">
-				                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					                       <span aria-hidden="true">&times;</span>
-				                           </button>
-				                               <h4 class="modal-title" id="myModalLabel">Informacion</h4>
-			             </div>
-			             <div class="modal-body">
-                     GG izi
-                   </div>
-		           </div>
-	           </div>
-             </div>
-        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cargar archivo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action='control/control.php' method='post' enctype="multipart/form-data">
+                    <input type='file' name='sel_file'  size='20'>
+                    <br/>
+                    <input align='right' type='submit' name='submit' class='btn btn-primary' value='Subir archivo'>
+                </form>
+              </div>
+    </div>
+  </div>
+</div>
 
         <footer>
 

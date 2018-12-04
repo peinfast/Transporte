@@ -1,5 +1,4 @@
 <h1 class="page-header">
-    <?php echo $alm->id != null ? $alm->Folio : 'Nuevo Registro'; ?>
 </h1>
 
 <ol class="breadcrumb">

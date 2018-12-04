@@ -1,21 +1,16 @@
-<h1 class="page-header">L1bre</h1>
-<div class="well well-sm text-right">
-    <form action='control/control.php' method='post' enctype="multipart/form-data">
-        <input type='file' name='sel_file' size='20'>
-        <input type='submit' name='submit' value='submit'>
-    </form>
-</div>
-<table>
+<h1 class="page-header"></h1>
+<table id="tablas">
     <thead>
         <tr>
-            <th style="width:180px;">Folio</th>
-            <th style="width:120px;">Cliente</th>
-            <th style="width:120px;">Marca</th>
-            <th style="width:120px;">Destino</th>
-            <th style="width:120px;">Servicio</th>
-            <th style="width:120px;">FH Carga</th>
-            <th style="width:120px;">Estatus</th>
-
+          <th style="width:180px;">Folio</th>
+          <th style="width:180px;">Cliente</th>
+          <th style="width:180px;">Marca</th>
+          <th style="width:180px;">Destino</th>
+          <th style="width:180px;">Servicio</th>
+          <th style="width:180px;">FH Carga</th>
+          <th style="width:180px;">Estatus</th>
+          <th style="width:80px;">Editar</th>
+          <th style="width:80px;">Eliminar</th>
         </tr>
     </thead>
     <tbody>
@@ -44,8 +39,11 @@
                 echo $r->Estatus5;
             }
              ?></td>
-            <td>
-               <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+            <td style="background-color: white;">
+                 <a href="?c=Transporte&a=EditarL1b&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+            </td>
+            <td style="background-color: white;">
+               <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
             </td>
         </tr>
     <?php endforeach; ?>
@@ -74,8 +72,11 @@
                 echo $r->Estatus5;
             }
              ?></td>
-            <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+            <td style="background-color: white;">
+                 <a href="?c=Transporte&a=EditarL1b&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+            </td>
+            <td style="background-color: white;">
+               <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
             </td>
         </tr>
     <?php endforeach; ?>
@@ -104,9 +105,12 @@
                 echo $r->Estatus5;
             }
              ?></td>
-            <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
-            </td>
+             <td style="background-color: white;">
+                  <a href="?c=Transporte&a=EditarL1b&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+             </td>
+             <td style="background-color: white;">
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
+             </td>
         </tr>
     <?php endforeach; ?>
     </tbody>

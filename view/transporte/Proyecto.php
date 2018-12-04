@@ -1,13 +1,6 @@
-<h1 class="page-header">Proyectos</h1>
+<h1 class="page-header"></h1>
 
-<div class="well well-sm text-right">
-    <form action='control/control.php' method='post' enctype="multipart/form-data">
-        <input type='file' name='sel_file' size='20'>
-        <input type='submit' name='submit' value='submit'>
-    </form>
-</div>
-
-<table>
+<table id="tablas">
     <thead>
         <tr>
             <th style="width:180px;">Folio</th>
@@ -48,7 +41,7 @@
               }
                ?></td>
                <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editar&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
                </td>
                <td style="background-color: white;">
                   <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
@@ -81,7 +74,7 @@
               }
                ?></td>
                <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editar&id=<?php echo $r->id; ?>">Editar</a>
+                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>">Editar</a>
                </td>
                <td style="background-color: white;">
                   <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
@@ -117,7 +110,7 @@
                   <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
                </td>
                <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editar&id=<?php echo $r->id; ?>">Editar</a>
+                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>">Editar</a>
                </td>
           </tr>
       <?php endforeach; ?>

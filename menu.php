@@ -19,34 +19,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
         <style media="screen">
-        .vertical-alignment-helper {
-          display:table;
-          height: 100%;
-          width: 100%;
-          pointer-events:none;
-        }
-        .vertical-align-center {
-  /* To center vertically */
-        display: table-cell;
-        vertical-align: middle;
-        pointer-events:none;
-        left: 40px;
-        }
-        .modal-content {
-  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-        width:inherit;
-        max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
-        height:inherit;
-  /* To center horizontally */
-        margin: 0 auto;
-        pointer-events:all;
-        }
+              #menu{
+                  position: fixed;
+                  top:0px;
+                  width: 100%;
+              }
         </style>
-
-
-    </head>
+      </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -58,7 +38,7 @@
         </header>
 
         <!--Barra de Navegacion-->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" id="menu">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Cambiar Navegacion</span>
