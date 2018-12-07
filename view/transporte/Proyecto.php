@@ -74,10 +74,10 @@
               }
                ?></td>
                <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>">Editar</a>
+                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
                </td>
                <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
                </td>
           </tr>
       <?php endforeach; ?>
@@ -107,10 +107,10 @@
               }
                ?></td>
                <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>">Eliminar</a>
+                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
                </td>
                <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarpro&id=<?php echo $r->id; ?>">Editar</a>
+                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
                </td>
           </tr>
       <?php endforeach; ?>

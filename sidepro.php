@@ -16,22 +16,13 @@
         <script type="text/javascript" src="assets/js/modernizr-2.6.2.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/main.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <style media="screen">
               #menu{
                   position: fixed;
                   top:0px;
                   width: 100%;
               }
-              .modal {
-                  position: static;
-                  right: 1000px;
-                  left: 0px;
-
-
-              }
+              
         </style>
     </head>
     <body>

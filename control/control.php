@@ -31,6 +31,14 @@ $db = new mysqli($db_host, $db_user, $db_pass, $database);
              //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
              fclose($handle);
              echo "Importación exitosa!";
+             session_start();
+             if ($area='Gerente') {
+                header("Location: ../gerente.php");
+             }
+             if ($area='L1bre') {
+                header("Location: ../operacionesl1b.php");
+             }
+          
          }
          else
          {
