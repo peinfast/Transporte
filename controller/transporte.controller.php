@@ -67,16 +67,31 @@ class TransporteController{
     }
     public function OperacionesL1b(){
         require_once 'view/upl1b.php';
+        require_once 'view/transporte/leerl1b.php';
+        require_once 'view/footer.php';
+    }
+    public function Editl1b(){
+        require_once 'view/upl1b.php';
         require_once 'view/transporte/L1bre.php';
         require_once 'view/footer.php';
     }
     public function OperacionesLI(){
         require_once 'view/upli.php';
+        require_once 'view/transporte/leerli.php';
+        require_once 'view/footer.php';
+    }
+    public function Editli(){
+        require_once 'view/upl1b.php';
         require_once 'view/transporte/Logistica.php';
         require_once 'view/footer.php';
     }
     public function OperacionesMov(){
         require_once 'view/upmov.php';
+        require_once 'view/transporte/leermov.php';
+        require_once 'view/footer.php';
+    }
+    public function Editmov(){
+        require_once 'view/upl1b.php';
         require_once 'view/transporte/Movilidad.php';
         require_once 'view/footer.php';
     }
@@ -87,16 +102,31 @@ class TransporteController{
     }
     public function OperacionesPro(){
         require_once 'view/uppro.php';
+        require_once 'view/transporte/leerprp.php';
+        require_once 'view/footer.php';
+    }
+    public function Editpro(){
+        require_once 'view/upl1b.php';
         require_once 'view/transporte/Proyecto.php';
         require_once 'view/footer.php';
     }
     public function OperacionesRec(){
         require_once 'view/uprec.php';
+        require_once 'view/transporte/leerrec.php';
+        require_once 'view/footer.php';
+    }
+    public function Editrec(){
+        require_once 'view/upl1b.php';
         require_once 'view/transporte/Recibo.php';
         require_once 'view/footer.php';
     }
     public function OperacionesRet(){
         require_once 'view/upret.php';
+        require_once 'view/transporte/leerret.php';
+        require_once 'view/footer.php';
+    }
+    public function Editret(){
+        require_once 'view/upl1b.php';
         require_once 'view/transporte/Retail.php';
         require_once 'view/footer.php';
     }

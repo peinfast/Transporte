@@ -50,7 +50,7 @@ require('conexion.php');
 					$_SESSION['txtusuario']=$usuario;
 					header("Location: ../operacionesret.php");
 			}
-			if ($filas==1 && $area=="Movilidad" && $tipo="Leer") {
+			if ($filas==1 && $area=="Movilidad" && $tipo=="Leer") {
 					$_SESSION['txtusuario']=$usuario;
 					header("Location: ../inder.php");
 			}

@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item dropdown">
-
+                        <li><a href="?c=Transporte&a=Editli">Editar</a></li>
                         <li><a href="?c=Transporte&a=Clabli">Registro</a></li>
                     </ul>
                     <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-right" action="model/busqueda.php">
@@ -57,12 +57,11 @@
                             <button type="submit" id="btn-ingresar" value="Buscar" name="buscador" class="btn btn-primary btn-lg">Buscar</button>
                     </form>
                     <div id="resp"></div>
-
-                </div>
-                <ul class="nav navbar-nav" style="float:right;">
+                    <ul class="nav navbar-nav" style="float:right;">
                   <li><a type="button" class="btn btn-primary" style="color:red;" data-toggle="modal" data-target="#exampleModal">Subir Archivo</a></li>
                     <li><a href="index.html">Cerrar Sesion</a></li>
                 </ul>
+                </div>
         </nav>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
