@@ -2,7 +2,7 @@
                 <div class="col-xs-12">
                     <hr />
                     <footer class="text-center well">
-                        <p>Desarrollado por <a href="https://mx.ingrammicro.com/">Ingram Micro</a></p>
+                        <p>Desarrollado en <a href="https://mx.ingrammicro.com/">Ingram Micro</a></p>
                     </footer>
                 </div>
             </div>

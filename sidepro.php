@@ -22,7 +22,7 @@
                   top:0px;
                   width: 100%;
               }
-              
+
         </style>
     </head>
     <body>
@@ -49,7 +49,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item dropdown">
-
+                        <li><a href="?c=Transporte&a=Editpro">Editar</a></li>
                         <li><a href="?c=Transporte&a=Clabpro">Registro</a></li>
                     </ul>
                     <form onsubmit="window.open('', 'popup', 'width = 800, height = 600')" target="popup" id="formulario" method="post" class="navbar-form navbar-right" action="model/busqueda.php">

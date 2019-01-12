@@ -1,10 +1,7 @@
 <h1 class="page-header">
 </h1>
 <h2>Inicio de Carga/Descarga</h2>
-<ol class="breadcrumb">
-  <li><a href="?c=Transporte">Folio</a></li>
-  <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Actualizacion Inicio de Carga/Descarga'; ?></li>
-</ol>
+
 
 <form id="frm-transporte" action="?c=Transporte&a=GCarga" method="post" enctype="multipart/form-data">
 
@@ -15,10 +12,17 @@
 
   <div class="form-group">
       <label>Estatus</label>
-      <select name="Estatus3" class="form-control">
-          <option value="En proceso de Carga y Descarga">En proceso de Carga y Descarga</option>
-          <option value="Incidencia">Incidencia</option>
-      </select>
+      <input type="text" name="Estatus3" value="En proceso de Carga y Descarga" readonly="readonly" required class="form-control" />
+  </div>
+
+  <div class="form-group">
+      <label>Transporte</label>
+      <input type="text" name="Transporte" value="<?php echo $alm->Transporte; ?>" required class="form-control" placeholder="Nombre del Transporte" />
+  </div>
+
+  <div class="form-group">
+      <label>Operador</label>
+      <input type="text" name="Operador" value="<?php echo $alm->Operador; ?>" required class="form-control" placeholder="Nombre del operador" />
   </div>
   <div class="form-group">
       <label>Cortina</label>
@@ -57,12 +61,10 @@
     echo $nombre;
    ?>" class="form-control">
 
-    <div class="form-group">
-        <label>Observaciones</label>
-        <input type="text" name="Observaciones3" value="<?php echo $alm->Observaciones3; ?>" required class="form-control" placeholder="Observaciones" />
-    </div>
-
-    <hr />
+   <div class="form-group">
+       <label>Observaciones</label>
+       <input type="text" name="Observaciones3" value="<?php echo $alm->Observaciones3; ?>" required class="form-control" />
+   </div>
 
     <div class="text-right">
         <button class="btn btn-success">Guardar</button>

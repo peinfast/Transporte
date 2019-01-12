@@ -1,17 +1,12 @@
 <h1 class="page-header">
 </h1>
 
-<ol class="breadcrumb">
-  <li><a href="?c=Transporte">Folio</a></li>
-  <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Nuevo Registro'; ?></li>
-</ol>
-
 <form id="frm-transporte" action="?c=Transporte&a=Guardame" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
 
     <div class="form-group">
         <label>Folio</label>
-        <input type="text" name="Folio" value="<?php echo $alm->Folio; ?>" class="form-control" placeholder="Ingrese Folio" />
+        <input type="text" name="Folio" value="<?php echo $alm->Folio; ?>" class="form-control" readonly="readonly" placeholder="Ingrese Folio" />
     </div>
 
     <input type="hidden" name="Area" value="<?php
@@ -34,12 +29,12 @@
 
     <div class="form-group">
         <label>Cliente</label>
-        <input type="text" name="Cliente" value="<?php echo $alm->Cliente; ?>" class="form-control" placeholder="Ingrese Cliente" />
+        <input type="text" name="Cliente" value="<?php echo $alm->Cliente; ?>" class="form-control" readonly="readonly" placeholder="Ingrese Cliente" />
     </div>
 
     <div class="form-group">
         <label>Marca</label>
-        <input type="text" name="Marca" value="<?php echo $alm->Marca; ?>" class="form-control" placeholder="Ingrese la Marca del Cargamento" />
+        <input type="text" name="Marca" value="<?php echo $alm->Marca; ?>" class="form-control" readonly="readonly" placeholder="Ingrese la Marca del Cargamento" />
     </div>
     <div class="form-group">
         <label>Cantidad de Unidades</label>
@@ -59,7 +54,7 @@
     </div>
     <div class="form-group">
         <label>Destino</label>
-        <input type="text" name="Destino" value="<?php echo $alm->Destino; ?>" class="form-control" placeholder="Ingrese el destino del Cargamento" />
+        <input type="text" name="Destino" value="<?php echo $alm->Destino; ?>" class="form-control" readonly="readonly" placeholder="Ingrese el destino del Cargamento" />
     </div>
     <div class="form-group">
         <label>Servicio</label>
@@ -72,7 +67,7 @@
 
     <div class="form-group">
         <label>Fecha/hora de carga</label>
-        <input type="datetime" name="FH_Carga" value="<?php echo $alm->FH_Carga; ?>" class="form-control" placeholder="AAAA-MM-DD HH:MM:SS" />
+        <input type="datetime" name="FH_Carga" value="<?php echo $alm->FH_Carga; ?>" class="form-control" readonly="readonly" placeholder="AAAA-MM-DD HH:MM:SS" />
     </div>
 
     <input type="hidden" name="Estatus" value="Por arribar" class="form-control">

@@ -20,49 +20,22 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Eliminar(){
-        $dbHost = 'localhost';
-        $dbUsername = 'root';
-        $dbPassword = '';
-        $dbName = 'cargamentos';
-
-        //Create connection and select DB
-        $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-        if ($db->connect_error) {
-            die("Unable to connect database: " . $db->connect_error);
-        }
-        $dni=$_REQUEST['id'];
-        $query = $db->query("SELECT Area FROM folios WHERE id='$dni'");
-        $row = mysqli_fetch_array($query);
-        $direarea=$row['Area'];
-        if ($direarea=="L1bre") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesl1b.php');
-        }
-        if ($direarea=="Logistica Inversa") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesli.php');
-        }
-        if ($direarea=="Movilidad") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesmov.php');
-        }
-        if ($direarea=="Proyectos") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionespro.php');
-        }
-        if ($direarea=="Recibo") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesrec.php');
-        }
-        if ($direarea=="Retail") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesret.php');
-        }
+      $this->model->Eliminar($_REQUEST['id']);
+      header("Location:".$_SERVER['HTTP_REFERER']);
     }
     public function General(){
         require_once 'view/arriba.php';
         require_once 'view/transporte/transporte.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarcarfin(){
+        require_once 'view/cab.php';
+        require_once 'view/transporte/editcar.php';
+        require_once 'view/footer.php';
+    }
+    public function Editcar(){
+        require_once 'view/cab.php';
+        require_once 'view/transporte/fincar.php';
         require_once 'view/footer.php';
     }
     public function OperacionesL1b(){
@@ -81,7 +54,7 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Editli(){
-        require_once 'view/upl1b.php';
+        require_once 'view/upli.php';
         require_once 'view/transporte/Logistica.php';
         require_once 'view/footer.php';
     }
@@ -91,7 +64,7 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Editmov(){
-        require_once 'view/upl1b.php';
+        require_once 'view/upmov.php';
         require_once 'view/transporte/Movilidad.php';
         require_once 'view/footer.php';
     }
@@ -102,11 +75,11 @@ class TransporteController{
     }
     public function OperacionesPro(){
         require_once 'view/uppro.php';
-        require_once 'view/transporte/leerprp.php';
+        require_once 'view/transporte/leerpro.php';
         require_once 'view/footer.php';
     }
     public function Editpro(){
-        require_once 'view/upl1b.php';
+        require_once 'view/uppro.php';
         require_once 'view/transporte/Proyecto.php';
         require_once 'view/footer.php';
     }
@@ -116,7 +89,7 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Editrec(){
-        require_once 'view/upl1b.php';
+        require_once 'view/uprec.php';
         require_once 'view/transporte/Recibo.php';
         require_once 'view/footer.php';
     }
@@ -126,13 +99,13 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Editret(){
-        require_once 'view/upl1b.php';
+        require_once 'view/upret.php';
         require_once 'view/transporte/Retail.php';
         require_once 'view/footer.php';
     }
     public function L1bre(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/L1bre.php';
+        require_once 'view/transporte/leerl1b.php';
         require_once 'view/footer.php';
     }
     public function L1brem(){
@@ -142,7 +115,7 @@ class TransporteController{
     }
     public function Logistica(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Logistica.php';
+        require_once 'view/transporte/leerli.php';
         require_once 'view/footer.php';
     }
     public function Logisticam(){
@@ -152,7 +125,7 @@ class TransporteController{
     }
     public function Movilidad(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Movilidad.php';
+        require_once 'view/transporte/leermov.php';
         require_once 'view/footer.php';
     }
     public function Movilidadm(){
@@ -162,7 +135,7 @@ class TransporteController{
     }
     public function Proyectos(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Proyecto.php';
+        require_once 'view/transporte/leerpro.php';
         require_once 'view/footer.php';
     }
     public function Proyectosm(){
@@ -172,7 +145,7 @@ class TransporteController{
     }
     public function Recibo(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Recibo.php';
+        require_once 'view/transporte/leerrec.php';
         require_once 'view/footer.php';
     }
     public function Recibom(){
@@ -182,7 +155,7 @@ class TransporteController{
     }
     public function Retail(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Retail.php';
+        require_once 'view/transporte/leerret.php';
         require_once 'view/footer.php';
     }
     public function Retailm(){
@@ -436,24 +409,9 @@ class TransporteController{
             ? $this->model->Actualizame($alm)
             : $this->model->Actualizame($alm);
 
-        if ($alm->Area=="L1bre") {
-                header('Location: operacionesl1b.php');
-        }
-        if ($alm->Area=="Logistica Inversa") {
-                header('Location: operacionesli.php');
-        }
-        if ($alm->Area=="Movilidad") {
-                header('Location: operacionesmov.php');
-        }
-        if ($alm->Area=="Proyectos") {
-                header('Location: operacionespro.php');
-        }
-        if ($alm->Area=="Recibo") {
-                header('Location: operacionesrec.php');
-        }
-        if ($alm->Area=="Retail") {
-            header('Location: operacionesret.php');
-        }
+
+        header("Location:".$_SERVER['HTTP_REFERER']);
+
     }
     public function GActua(){
         $alm = new Transporte();
@@ -503,6 +461,8 @@ class TransporteController{
         $alm->Cortina = $_REQUEST['Cortina'];
         $alm->Usuario3 = $_REQUEST['Usuario3'];
         $alm->Estatus3 = $_REQUEST['Estatus3'];
+        $alm->Transporte = $_REQUEST['Transporte'];
+        $alm->Operador = $_REQUEST['Operador'];
         $alm->Observaciones3 = $_REQUEST['Observaciones3'];
         $alm->Folio = $_REQUEST['Folio'];
 

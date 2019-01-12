@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Informacion General</title>
@@ -24,22 +24,41 @@
 
         //get content from database
         $query = $db->query("SELECT * FROM folios WHERE Folio= '".$_POST['buscar']."'");
+        $querydos = $db->query("SELECT * FROM respaldo WHERE Folio= '".$_POST['buscar']."'");
+        $rowdos = mysqli_fetch_array($querydos);
         $row = mysqli_fetch_array($query);
         ?><table><tbody><?php
-        echo '<td>'.'Folio: '.$row['Folio'].'</td>';
-        echo '<td>'.'Area: '.$row['Area'].'</td>';
+        echo 'Folio: '.$row['Folio'].'<br />';
+        echo 'Area: '.$row['Area'].'<br />';
         echo 'Cliente: '.$row['Cliente'].'<br />';
         echo 'Marca: '.$row['Marca'].'<br />';
         echo 'Destino: '.$row['Destino'].'<br />';
         echo 'Servicio: '.$row['Servicio'].'<br />';
+        echo 'Fecha y hora por llegar: '.$row['FH_Carga'].'<br />';
+        echo 'Transporte: '.$row['Transporte'].'<br />';
+        echo 'Operador: '.$row['Operador'].'<br />';
         echo 'Cantidad de Unidades: '.$row['CantidadUnidades'].'<br />';
         echo 'Cortina: '.$row['Cortina'].'<br />';
-        echo 'Estatus del Producto: '.$row['EstatusProducto'].'<br />';
-        echo '<pre>'.'1er Usuario: '.$row['Usuario1'].'        '.'Fecha del Registro: '.$row['FH_Cedic'].'        '.'Estatus: '.$row['Estatus'].'        '.'Observaciones: '.$row['Observaciones'].'<br />';
-        echo '2do Usuario: '.$row['Usuario2'].'        '.'Fecha del Registro: '.$row['FH_Arribo'].'        '.'Estatus: '.$row['Estatus2'].'        '.'Observaciones: '.$row['Observaciones2'].'<br />';
-        echo '3er Usuario: '.$row['Usuario3'].'        '.'Fecha del Registro: '.$row['FH_Inicio_CarDesc'].'        '.'Estatus: '.$row['Estatus3'].'        '.'Observaciones: '.$row['Observaciones3'].'<br />';
-        echo '4to Usuario: '.$row['Usuario4'].'        '.'Fecha del Registro: '.$row['FH_Conclu_CarDesc'].'        '.'Estatus: '.$row['Estatus4'].'        '.'Observaciones: '.$row['Observaciones4'].'<br />';
-        echo '5to Usuario: '.$row['Usuario5'].'        '.'Fecha del Registro: '.$row['FH_Salida_Caseta'].'        '.'Estatus: '.$row['Estatus5'].'        '.'Observaciones: '.$row['Observaciones5'].'<br />'.'</pre>';
+        echo 'Usuario del Registro: '.$row['Usuario1'].'<br />';
+        echo 'Fecha del Registro: '.$row['FH_Cedic'].'<br />';
+        echo 'Estatus: '.$row['Estatus'].'<br />';
+        echo 'Observaciones: '.$row['Observaciones'].'<br />'.'<br />';
+        echo 'Usuario Caseta 2: '.$row['Usuario2'].'<br />';
+        echo 'Fecha del Registro: '.$row['FH_Arribo'].'<br />';
+        echo 'Estatus: '.$row['Estatus2'].'<br />';
+        echo 'Observaciones: '.$row['Observaciones2'].'<br />'.'<br />';
+        echo 'Usuario Prevension: '.$row['Usuario3'].'<br />';
+        echo 'Fecha del Registro: '.$row['FH_Inicio_CarDesc'].'<br />';
+        echo 'Estatus: '.$row['Estatus3'].'<br />';
+        echo 'Observaciones: '.$row['Observaciones3'].'<br /><br />';
+        echo 'Usuario Prevension: '.$row['Usuario4'].'<br />';
+        echo 'Fecha del Registro: '.$row['FH_Conclu_CarDesc'].'<br />';
+        echo 'Estatus: '.$row['Estatus4'].'<br />';
+        echo 'Observaciones: '.$row['Observaciones4'].'<br /><br />';
+        echo 'Usuario Caseta 2: '.$row['Usuario5'].'<br />';
+        echo 'Fecha del Registro: '.$row['FH_Salida_Caseta'].'<br />';
+        echo 'Estatus: '.$row['Estatus5'].'<br />';
+        echo 'Observaciones: '.$row['Observaciones5'].'<br /><br />';
       ?><tbody></table><?php
     }else{
         echo 'Folio no encontrado';

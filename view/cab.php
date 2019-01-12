@@ -13,10 +13,13 @@
         <script src="assets/js/modernizr-2.6.2.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 				<script>
-							function recarga(){
-								location.href=location.href
-							}
-							setInterval('recarga()',300000)
+				setInterval(function() {
+					table.ajax.reload(function(){
+						$(".paginate_button > a").on("focus",function(){
+							$(this).blur();
+						});
+					}, false);
+				}, 3000);
 			  </script>
 	</header>
     <body>

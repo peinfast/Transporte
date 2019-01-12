@@ -10,14 +10,33 @@
 				<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <link rel="stylesheet" href="assets/css/bootstrap.css"/>
         <link rel="stylesheet" href="assets/css/main.css"/>
-        <script src="assets/js/modernizr-2.6.2.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 				<script>
-							function recarga(){
-								location.href=location.href
-							}
-							setInterval('recarga()',300000)
-			  </script>
+function sendRequest(){
+  $.ajax({
+    url: "ajax/count.php",
+    success:
+      function(result){
+/* si es success mostramos resultados */
+       $('#mytable').text(result);
+    },
+    complete: function() {
+/* solo una vez que la petición se completa (success o no success)
+   pedimos una nueva petición en 3 segundos */
+       setTimeout(function(){
+         sendRequest();
+       }, 3000);
+      }
+    });
+  };
+
+/* primera petición que echa a andar la maquinaria */
+$(function() {
+    sendRequest();
+});
+
+</script>
 
 	</header>
     <body>

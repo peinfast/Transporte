@@ -9,6 +9,9 @@ $db_pass = '';
 $database = 'cargamentos';
 $table = 'folios';
 $db = new mysqli($db_host, $db_user, $db_pass, $database);
+$query = $db->query("SELECT nombre FROM usuarios WHERE usuario='$user'");
+$row = mysqli_fetch_array($query);
+$nombre=$row['nombre'];
     if(isset($_POST['submit']))
     {
         //Aquí es donde seleccionamos nuestro csv
@@ -25,20 +28,15 @@ $db = new mysqli($db_host, $db_user, $db_pass, $database);
              while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
              {
                //Insertamos los datos con los valores...
-                $sql =$db->query ("INSERT into folios(Folio, Area, Cliente, Marca, Destino, Servicio, FH_Carga,Estatus) values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','Por arribar')");
+                $sql =$db->query ("INSERT into folios(Folio, Area, Cliente, Marca, Destino, Servicio, FH_Carga, Observaciones, Estatus, FH_Cedic) values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]','Por arribar',now())");
 
              }
              //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
              fclose($handle);
              echo "Importación exitosa!";
              session_start();
-             if ($area='Gerente') {
-                header("Location: ../gerente.php");
-             }
-             if ($area='L1bre') {
-                header("Location: ../operacionesl1b.php");
-             }
-          
+             header("Location:".$_SERVER['HTTP_REFERER']);
+
          }
          else
          {

@@ -1,21 +1,20 @@
 <h1 class="page-header"></h1>
-<table id="tablas">
+<table>
     <thead>
         <tr>
-          <th style="width:180px;">Folio</th>
-          <th style="width:180px;">Area</th>
-          <th style="width:180px;">Cliente</th>
-          <th style="width:180px;">Marca</th>
-          <th style="width:180px;">Destino</th>
-          <th style="width:180px;">Servicio</th>
-          <th style="width:180px;">FH Carga</th>
-          <th style="width:180px;">Estatus</th>
-          <th style="width:80px;">Editar</th>
-          <th style="width:80px;">Eliminar</th>
+            <th style="width:180px;">Folio</th>
+            <th style="width:120px;">Area</th>
+            <th style="width:120px;">Cliente</th>
+            <th style="width:120px;">Marca</th>
+            <th style="width:120px;">Destino</th>
+            <th style="width:120px;">Servicio</th>
+            <th style="width:120px;">FH Carga</th>
+            <th style="width:120px;">Estatus</th>
+
         </tr>
     </thead>
     <tbody>
-      <?php foreach($this->model->warl1b() as $r): ?>
+      <?php foreach($this->model->warrec() as $r): ?>
           <tr style="background-color: red;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
@@ -41,15 +40,9 @@
                   echo $r->Estatus5;
               }
                ?></td>
-               <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarli&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
-               </td>
-               <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
-               </td>
           </tr>
       <?php endforeach; ?>
-      <?php foreach($this->model->azulL1b() as $r): ?>
+      <?php foreach($this->model->azulRec() as $r): ?>
           <tr style="background-color: MEDIUMSLATEBLUE;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
@@ -75,15 +68,9 @@
                   echo $r->Estatus5;
               }
                ?></td>
-               <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarli&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
-               </td>
-               <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
-               </td>
           </tr>
       <?php endforeach; ?>
-      <?php foreach($this->model->rojoL1b() as $r): ?>
+      <?php foreach($this->model->rojoRec() as $r): ?>
           <tr style="background-color: tomato;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
@@ -109,15 +96,9 @@
                   echo $r->Estatus5;
               }
                ?></td>
-               <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarli&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
-               </td>
-               <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
-               </td>
           </tr>
       <?php endforeach; ?>
-      <?php foreach($this->model->amarilloL1b() as $r): ?>
+      <?php foreach($this->model->amarilloRec() as $r): ?>
           <tr style="background-color: yellow;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
@@ -143,15 +124,9 @@
                   echo $r->Estatus5;
               }
                ?></td>
-               <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarli&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
-               </td>
-               <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
-               </td>
           </tr>
       <?php endforeach; ?>
-      <?php foreach($this->model->verdeL1b() as $r): ?>
+      <?php foreach($this->model->verdeRec() as $r): ?>
           <tr style="background-color: green;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
@@ -176,13 +151,7 @@
               else{
                   echo $r->Estatus5;
               }
-               ?></td>
-               <td style="background-color: white;">
-                    <a href="?c=Transporte&a=Editarli&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
-               </td>
-               <td style="background-color: white;">
-                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
-               </td>
+              ?></td>
           </tr>
       <?php endforeach; ?>
     </tbody>

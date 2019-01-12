@@ -15,31 +15,10 @@
 
   <div class="form-group">
       <label>Estatus</label>
-      <select name="Estatus5" class="form-control">
-          <option value="Liberado de Cedic">Liberado de Cedic</option>
-          <option value="Incidencia">Incidencia</option>
-      </select>
+      <input type="text" name="Estatus5" value="Liberado de Cedic" readonly="readonly" required class="form-control" />
   </div>
 
-    <input type="hidden" name="Usuario5" value="<?php
-
-    $dbHost = 'localhost';
-    $dbUsername = 'root';
-    $dbPassword = '';
-    $dbName = 'cargamentos';
-
-    //Create connection and select DB
-    $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-    if ($db->connect_error) {
-        die("Unable to connect database: " . $db->connect_error);
-    }
-    $query = $db->query("SELECT nombre FROM usuarios WHERE usuario='$user'");
-    $row = mysqli_fetch_array($query);
-    $nombre=$row['nombre'];
-    echo $nombre;
-
-     ?>" class="form-control">
+    <input type="hidden" name="Usuario5" value="Salvador de la Cruz" class="form-control">
 
     <div class="form-group">
         <label>Observaciones</label>
